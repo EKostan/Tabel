@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56CDAFE9-8286-4347-9827-1942803FAF40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CACore</RootNamespace>
+    <AssemblyName>CACore</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\AboutInfo.cs" />
+    <Compile Include="BasePluginSettings.cs" />
+    <Compile Include="About\IAboutView.cs" />
+    <Compile Include="CustomPath.cs" />
+    <Compile Include="FolderOpener\IOpenFolder.cs" />
+    <Compile Include="FolderOpener\IOpenFolderService.cs" />
+    <Compile Include="FolderOpener\OpenFolderSettings.cs" />
+    <Compile Include="IPluginSettings.cs" />
+    <Compile Include="MainSettings.cs" />
+    <Compile Include="Menu\BaseItem.cs" />
+    <Compile Include="Menu\BaseItemButton.cs" />
+    <Compile Include="Menu\BaseItemCheckBox.cs" />
+    <Compile Include="Menu\BaseItemDateEdit.cs" />
+    <Compile Include="Menu\BaseItemTextEdit.cs" />
+    <Compile Include="Menu\CommonCategoryKeys.cs" />
+    <Compile Include="Menu\CommonGroupKeys.cs" />
+    <Compile Include="Menu\CommonTabKeys.cs" />
+    <Compile Include="Menu\ICategory.cs" />
+    <Compile Include="Menu\IItemAvailability.cs" />
+    <Compile Include="Menu\IItemDateEdit.cs" />
+    <Compile Include="Menu\IItem.cs" />
+    <Compile Include="Menu\IItemButton.cs" />
+    <Compile Include="Menu\IItemCheckBox.cs" />
+    <Compile Include="Menu\IGroup.cs" />
+    <Compile Include="Menu\IItemList.cs" />
+    <Compile Include="Menu\IItemTextEdit.cs" />
+    <Compile Include="Menu\IMenuTab.cs" />
+    <Compile Include="Menu\IRuleItem.cs" />
+    <Compile Include="Menu\IRuleMenuItem.cs" />
+    <Compile Include="Menu\MainMenu.cs" />
+    <Compile Include="Menu\Group.cs" />
+    <Compile Include="Menu\MenuTab.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ISettingsTab.cs" />
+    <Compile Include="Settings\ISettingsView.cs" />
+    <Compile Include="Settings\SettingsApi.cs" />
+    <Compile Include="Splash\ISplashView.cs" />
+    <Compile Include="Trees\Actions\ItemButtonAction.cs" />
+    <Compile Include="Trees\Actions\DataAction.cs" />
+    <Compile Include="Trees\Actions\DataPropertiesAction.cs" />
+    <Compile Include="Trees\Actions\DeleteActionAtribute.cs" />
+    <Compile Include="Trees\Actions\DeleteNodeAction.cs" />
+    <Compile Include="Trees\Actions\IAction.cs" />
+    <Compile Include="Trees\CheckNodeEventArgs.cs" />
+    <Compile Include="Trees\FolderNode.cs" />
+    <Compile Include="Trees\INode.cs" />
+    <Compile Include="Trees\INodeDescriptor.cs" />
+    <Compile Include="Trees\ITemplate.cs" />
+    <Compile Include="Trees\Node.cs" />
+    <Compile Include="Trees\NodeChangeEventArgs.cs" />
+    <Compile Include="Trees\INodeStatus.cs" />
+    <Compile Include="Trees\NodeDescriptor.cs" />
+    <Compile Include="Trees\NodeRegistry.cs" />
+    <Compile Include="Trees\NodeStatus.cs" />
+    <Compile Include="Trees\RootNode.cs" />
+    <Compile Include="Trees\TemplateTree.cs" />
+    <Compile Include="Trees\Tree.cs" />
+    <Compile Include="Trees\TreeBuilder.cs" />
+    <Compile Include="Trees\TreeManager.cs" />
+    <Compile Include="Trees\Template.cs" />
+    <Compile Include="Trees\TemplateRegistry.cs" />
+    <Compile Include="View\IDacMediator.cs" />
+    <Compile Include="View\IDacView.cs" />
+    <Compile Include="View\IToastMessage.cs" />
+    <Compile Include="View\IMainView.cs" />
+    <Compile Include="View\LayoutSettings.cs" />
+    <Compile Include="View\LayoutSettingsCollection.cs" />
+    <Compile Include="View\UiLayoutTemplates.cs" />
+    <Compile Include="View\Tab.cs" />
+    <Compile Include="View\Workspace.cs" />
+    <Compile Include="Visualizers\IPresentation.cs" />
+    <Compile Include="Visualizers\IVisualizer.cs" />
+    <Compile Include="Visualizers\IVisualizerCreator.cs" />
+    <Compile Include="Visualizers\Visualizer.cs" />
+    <Compile Include="Visualizers\VisualizerCreator.cs" />
+    <Compile Include="Visualizers\VisualizerRegistry.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{c8072825-d9dd-4b66-a7a3-e99a255d8eb6}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

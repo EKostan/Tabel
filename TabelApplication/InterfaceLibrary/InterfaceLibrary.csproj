@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{93320D37-9F5B-483F-9DDB-C0AB7DB37CC7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InterfaceLibrary</RootNamespace>
+    <AssemblyName>InterfaceLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CppCodeProvider, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Colorizers\ColorizerFactory.cs" />
+    <Compile Include="Colorizers\ColumnColorizer.cs" />
+    <Compile Include="Colorizers\ColumnColorizerInt.cs" />
+    <Compile Include="Colorizers\ColumnColorizerString.cs" />
+    <Compile Include="Colorizers\IColumnColorizer.cs" />
+    <Compile Include="Editors\CheckedComboBoxEditEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\CheckedComboBoxEditExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\CheckedComboBoxEditMask.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\ComboBoxEditExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\DateEditExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\HyperLinkEditExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\ProgressBarControlExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\TextEditExt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\RadioListBoxControl.cs" />
+    <Compile Include="ExtensionMethods\WinFormControlEx.cs" />
+    <Compile Include="FileHelper\ChooseFilesAndDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ChooseFilesAndDateForm.Designer.cs">
+      <DependentUpon>ChooseFilesAndDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\ChooseDirAndDateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ChooseDirAndDateForm.Designer.cs">
+      <DependentUpon>ChooseDirAndDateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\ChooseFilesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ChooseFilesForm.Designer.cs">
+      <DependentUpon>ChooseFilesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\ChooseDirForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ChooseDirForm.Designer.cs">
+      <DependentUpon>ChooseDirForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\FileAndDirHelperLogic.cs" />
+    <Compile Include="FileHelper\FileHelper.cs" />
+    <Compile Include="FileHelper\FileHelperLogic.cs" />
+    <Compile Include="FileHelper\FileHelperSeveralCopying.cs" />
+    <Compile Include="FileHelper\FileHelperWithFilterLogic.cs" />
+    <Compile Include="FileHelper\IFileHelperLogic.cs" />
+    <Compile Include="FileHelper\ProgressInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ProgressInfoForm.Designer.cs">
+      <DependentUpon>ProgressInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\ReplaceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper\ReplaceDialog.Designer.cs">
+      <DependentUpon>ReplaceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileHelper\TextEditWithPasteEvent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CommentForm.Designer.cs">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ImageGallery.cs" />
+    <Compile Include="EditMenu.cs" />
+    <Compile Include="ImageDescriptor.cs" />
+    <Compile Include="Editors\ComboBoxDynamicSearch.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="InterfaceSettings\ColorsConst.cs" />
+    <Compile Include="Logic\EditorHelper.cs" />
+    <Compile Include="Logic\TimeHelper.cs" />
+    <Compile Include="NumberHelper.cs" />
+    <Compile Include="GridExporter.cs" />
+    <Compile Include="Dialogs.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Workspace\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Workspace\WorkspaceMenuController.cs" />
+    <Compile Include="Workspace\WorkspaceController.cs" />
+    <Compile Include="CommentMenu.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ImageController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FileHelper\ChooseFilesAndDateForm.resx">
+      <DependentUpon>ChooseFilesAndDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileHelper\ChooseDirAndDateForm.resx">
+      <DependentUpon>ChooseDirAndDateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileHelper\ChooseFilesForm.resx">
+      <DependentUpon>ChooseFilesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileHelper\ChooseDirForm.resx">
+      <DependentUpon>ChooseDirForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileHelper\ProgressInfoForm.resx">
+      <DependentUpon>ProgressInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileHelper\ReplaceDialog.resx">
+      <DependentUpon>ReplaceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CommentForm.resx">
+      <DependentUpon>CommentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Workspace\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\DataAccessContract.History.HistoryRecord.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewTaskEmployees_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelTask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskAssing_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptTask_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewTaskEmployee_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TaskClone_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotReport_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelDatabase_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelPackageProduct_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CancelArticle_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PGE_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ОGE_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptMethodology_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptOpl_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptPge_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptQuality_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptRpc_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RejectMethodology_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RejectOpl_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RejectPge_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RejectQuality_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RejectRpc_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AcceptedToKip_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReturnOrderAcceptedToKip_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GetLas_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UploadCustomer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DownloadRaw_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RepeatTemplate_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReprocessingTask_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OnConclusionCheck_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckPeo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckPge_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnCheckPeo_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UnCheckPge_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CACore\CACore.csproj">
+      <Project>{56cdafe9-8286-4347-9827-1942803faf40}</Project>
+      <Name>CACore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{c8072825-d9dd-4b66-a7a3-e99a255d8eb6}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
