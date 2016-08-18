@@ -23,6 +23,9 @@ namespace Contract
 
             Employees = new Employees();
             Times = new Times();
+            Jobs = new Jobs();
+            Objects = new Objects();
+            Contracts = new Contracts();
         }
 
         public static string ConnectionString { get; set; }
@@ -35,6 +38,12 @@ namespace Contract
 
         public Employees Employees { get; set; }
         public Times Times { get; set; }
+
+        public Jobs Jobs { get; set; }
+
+        public Objects Objects { get; set; }
+
+        public Contracts Contracts { get; set; }
 
     }
 }

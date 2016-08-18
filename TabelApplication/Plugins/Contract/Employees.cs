@@ -7,7 +7,7 @@ namespace Contract
 {
     public class Employees
     {
-        public List<EmployeeRecord> GetEmployees()
+        public List<EmployeeRecord> Get()
         {
             using (var conn = Project.CreateConnection())
             {
@@ -15,7 +15,7 @@ namespace Contract
             }
         }
 
-        public void SetEmployees(List<EmployeeRecord> items)
+        public void Set(List<EmployeeRecord> items)
         {
             using (var conn = Project.CreateConnection())
             {

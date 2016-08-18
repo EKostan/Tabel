@@ -1,4 +1,6 @@
-﻿namespace Contract
+﻿using System;
+
+namespace Contract
 {
     public class TimeRecord : Record
     {
@@ -13,5 +15,13 @@
 
         public int ObjectId { get; set; }
         public string ObjectName { get; set; }
+
+        public int ContractId { get; set; }
+        public string ContractName { get; set; }
+
+
+        public DateTime Date { get; set; }
+
+        public int Hours { get; set; }
     }
 }

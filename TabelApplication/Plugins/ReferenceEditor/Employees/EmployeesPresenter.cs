@@ -29,7 +29,7 @@ namespace ReferenceEditor.Employees
 
         void _view_SaveButtonClick(object sender, System.EventArgs e)
         {
-            Project.Current.Employees.SetEmployees(_view.GetEmployees());
+            Project.Current.Employees.Set(_view.GetEmployees());
             ReloadData();
         }
 
@@ -40,7 +40,7 @@ namespace ReferenceEditor.Employees
 
         void ReloadData()
         {
-            var data = Project.Current.Employees.GetEmployees();
+            var data = Project.Current.Employees.Get();
             _view.SetEmployees(data);
         }
 

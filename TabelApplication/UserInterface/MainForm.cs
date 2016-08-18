@@ -646,12 +646,13 @@ namespace UserInterface
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+#if !DEBUG
             if (Dialogs.Question("Вы действительно хотите закрыть программу?") != DialogResult.Yes)
             {
                 e.Cancel = true;
                 return;
             }
-
+#endif
             OnMainViewClose();
         }
 

@@ -58,18 +58,20 @@ namespace ReferenceEditor.Employees
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            var emp = _source.AddNew();
-            emp.Status = Status.Insert;
+            var record = _source.AddNew();
+            record.Status = Status.Insert;
+            _items.Add(record);
         }
 
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)
         {
-            var emp = e.Row as EmployeeRecord;
+            var record = e.Row as EmployeeRecord;
 
-            if(emp == null)
+            if(record == null)
                 return;
 
-            emp.Status = Status.Update;
+            if (record.Status != Status.Insert)
+                record.Status = Status.Update;
         }
 
         private void gridView1_RowDeleted(object sender, DevExpress.Data.RowDeletedEventArgs e)
