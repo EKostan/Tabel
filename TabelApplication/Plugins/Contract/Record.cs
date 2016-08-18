@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ReferenceEditor
+namespace Contract
 {
-    public class Class1
+    public abstract class Record
     {
+        public Status Status { get; set; }
+
     }
 }

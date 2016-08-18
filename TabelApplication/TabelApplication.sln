@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{21E4
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReferenceEditor", "Plugins\ReferenceEditor\ReferenceEditor.csproj", "{8FF18DF0-8474-4CEA-87CD-F6B967542AB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "Plugins\Contract\Contract.csproj", "{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,14 @@ Global
 		{8FF18DF0-8474-4CEA-87CD-F6B967542AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8FF18DF0-8474-4CEA-87CD-F6B967542AB7}.Release|x64.ActiveCfg = Release|Any CPU
 		{8FF18DF0-8474-4CEA-87CD-F6B967542AB7}.Release|x86.ActiveCfg = Release|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Release|x64.ActiveCfg = Release|Any CPU
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,5 +113,6 @@ Global
 		{C8072825-D9DD-4B66-A7A3-E99A255D8EB6} = {4DEA4D24-CDB3-4FC3-9279-784BD94E2EEA}
 		{797B7B10-98BB-450F-B91F-7FAFC8FE3299} = {21E49C2C-639E-453F-A973-2782FCFCA3E1}
 		{8FF18DF0-8474-4CEA-87CD-F6B967542AB7} = {21E49C2C-639E-453F-A973-2782FCFCA3E1}
+		{CBCB5CBD-F2AB-4542-8FEC-B46E6DB373A2} = {21E49C2C-639E-453F-A973-2782FCFCA3E1}
 	EndGlobalSection
 EndGlobal

@@ -46,6 +46,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Plugins\Contract\Contract.csproj">
+      <Project>{cbcb5cbd-f2ab-4542-8fec-b46e6db373a2}</Project>
+      <Name>Contract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Plugins\ReferenceEditor\ReferenceEditor.csproj">
+      <Project>{8ff18df0-8474-4cea-87cd-f6b967542ab7}</Project>
+      <Name>ReferenceEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
