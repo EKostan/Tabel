@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using CACore.View;
 using Contract;
 
-namespace ReferenceEditor.Employees
+namespace ReferenceEditor.Jobs
 {
-    class EmployeesPresenter : IDisposable
+    class JobsPresenter : IDisposable
     {
-        private EmployeesControl _view;
+        private JobsControl _view;
 
-        public EmployeesPresenter(EmployeesControl view)
+        public JobsPresenter(JobsControl view)
         {
             _view = view;
             _view.Load += _view_Load;
             _view.SaveButtonClick += _view_SaveButtonClick;
         }
 
-        
 
         void _view_SaveButtonClick(object sender, System.EventArgs e)
         {
-            Project.Current.Employees.Set(_view.GetEmployees());
+            Project.Current.Jobs.Set(_view.GetJobs());
             ReloadData();
         }
 
@@ -31,9 +30,10 @@ namespace ReferenceEditor.Employees
 
         public void ReloadData()
         {
-            var data = Project.Current.Employees.Get();
-            _view.SetEmployees(data);
+            var data = Project.Current.Jobs.Get();
+            _view.SetJobs(data);
         }
+
         public void Dispose()
         {
             _view.Load -= _view_Load;

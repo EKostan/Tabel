@@ -43,6 +43,8 @@ namespace ClientApplication
                 new Group() { Key = CommonGroupKeys.File, DisplayName = "Файл" },
                 new Group() { Key = CommonGroupKeys.Search, DisplayName = "Поиск" },
                 new Group() { Key = CommonGroupKeys.Journals, DisplayName = "Журналы" },
+                new Group() { Key = CommonGroupKeys.Data, DisplayName = "Данные" },
+                new Group() { Key = CommonGroupKeys.References, DisplayName = "Справочники" },
                 new Group() { Key = CommonGroupKeys.WorkGroup, DisplayName = "Рабочая группа" },
                 new Group() { Key = CommonGroupKeys.Settings, DisplayName = "Настройки" },
                 new Group() { Key = CommonGroupKeys.Actions, DisplayName = "Действия" },
@@ -60,7 +62,7 @@ namespace ClientApplication
             MainMenu.AddTab(tab);
 
             // мешает, можно случайно ее нажать
-            MainMenu.AddMenuItem(new UpdateItem(), CommonGroupKeys.File);
+            MainMenu.AddMenuItem(new UpdateItem(), CommonGroupKeys.Data);
             MainMenu.AddMenuItem(new SettingsItem(), CommonGroupKeys.Settings);
 
 

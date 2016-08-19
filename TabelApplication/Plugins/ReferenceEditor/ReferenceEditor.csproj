@@ -56,6 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\ContractsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Contracts\ContractsControl.Designer.cs">
+      <DependentUpon>ContractsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contracts\ContractsItem.cs" />
+    <Compile Include="Contracts\ContractsPresenter.cs" />
+    <Compile Include="Contracts\ContractsVisualizer.cs" />
     <Compile Include="Employees\EmployeesControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,7 +72,24 @@
       <DependentUpon>EmployeesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Employees\EmployeesPresenter.cs" />
-    <Compile Include="Employees\ReferenceEmplyees.cs" />
+    <Compile Include="Jobs\JobsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Jobs\JobsControl.Designer.cs">
+      <DependentUpon>JobsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Jobs\JobsItem.cs" />
+    <Compile Include="Jobs\JobsPresenter.cs" />
+    <Compile Include="Jobs\JobsVisualizer.cs" />
+    <Compile Include="Objects\ObjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Objects\ObjectsControl.Designer.cs">
+      <DependentUpon>ObjectsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\ObjectsItem.cs" />
+    <Compile Include="Objects\ObjectsPresenter.cs" />
+    <Compile Include="Objects\ObjectsVisualizer.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -84,8 +110,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Contracts\ContractsControl.resx">
+      <DependentUpon>ContractsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Employees\EmployeesControl.resx">
       <DependentUpon>EmployeesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jobs\JobsControl.resx">
+      <DependentUpon>JobsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Objects\ObjectsControl.resx">
+      <DependentUpon>ObjectsControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -120,6 +155,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Contract.ContractRecord.datasource" />
     <None Include="Properties\DataSources\Contract.Employee.datasource" />
     <None Include="Properties\DataSources\Contract.TimeRecord.datasource" />
   </ItemGroup>

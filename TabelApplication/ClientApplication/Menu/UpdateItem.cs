@@ -8,8 +8,9 @@ namespace ClientApplication.Menu
     {
         public UpdateItem()
         {
-            this.DisplayName = "Обновить";
-            this.Icon = ImageGallery.RefreshIcon;
+            DisplayName = "Обновить";
+            Icon = ImageGallery.RefreshIcon;
+            LargeIcon = ImageGallery.RefreshIcon32;
         }
 
         protected override void DoExecute()

@@ -9,7 +9,8 @@ namespace ReferenceEditor.Employees
         public EmployeesItem()
         {
             this.DisplayName = "Сотрудники";
-            Icon = ImageGallery.TeamIcon;
+            Icon = ImageGallery.ContactIcon;
+            LargeIcon = ImageGallery.ContactIcon32;
         }
 
         protected override void DoExecute()

@@ -8,8 +8,9 @@ namespace ClientApplication.Menu
     {
         public SettingsItem()
         {
-            this.DisplayName = "Настройки";
-            this.Icon = ImageGallery.SettingsIcon;
+            DisplayName = "Настройки";
+            Icon = ImageGallery.PropertiesIcon;
+            LargeIcon = ImageGallery.PropertiesIcon32;
         }
 
 

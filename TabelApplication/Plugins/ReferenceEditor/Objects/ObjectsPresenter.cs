@@ -3,24 +3,22 @@ using System.Collections.Generic;
 using CACore.View;
 using Contract;
 
-namespace ReferenceEditor.Employees
+namespace ReferenceEditor.Objects
 {
-    class EmployeesPresenter : IDisposable
+    class ObjectsPresenter : IDisposable
     {
-        private EmployeesControl _view;
+        private ObjectsControl _view;
 
-        public EmployeesPresenter(EmployeesControl view)
+        public ObjectsPresenter(ObjectsControl view)
         {
             _view = view;
             _view.Load += _view_Load;
             _view.SaveButtonClick += _view_SaveButtonClick;
         }
 
-        
-
         void _view_SaveButtonClick(object sender, System.EventArgs e)
         {
-            Project.Current.Employees.Set(_view.GetEmployees());
+            Project.Current.Objects.Set(_view.GetObjects());
             ReloadData();
         }
 
@@ -31,9 +29,10 @@ namespace ReferenceEditor.Employees
 
         public void ReloadData()
         {
-            var data = Project.Current.Employees.Get();
-            _view.SetEmployees(data);
+            var data = Project.Current.Objects.Get();
+            _view.SetObjects(data);
         }
+
         public void Dispose()
         {
             _view.Load -= _view_Load;

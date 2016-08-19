@@ -16,7 +16,6 @@ namespace ReferenceEditor.Employees
         private BindingList<EmployeeRecord> _source;
         
         public event EventHandler SaveButtonClick;
-        public event EventHandler ReloadButtonClick;
 
 
         public List<EmployeeRecord> GetEmployees()
@@ -43,17 +42,6 @@ namespace ReferenceEditor.Employees
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OnSaveButtonClick();
-        }
-
-        protected virtual void OnReloadButtonClick()
-        {
-            var handler = ReloadButtonClick;
-            if (handler != null) handler(this, EventArgs.Empty);
-        }
-
-        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            OnReloadButtonClick();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

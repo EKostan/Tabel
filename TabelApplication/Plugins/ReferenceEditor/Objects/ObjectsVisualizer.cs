@@ -3,26 +3,27 @@ using CACore.View;
 using CACore.Visualizers;
 using InterfaceLibrary;
 
-namespace ReferenceEditor.Employees
+namespace ReferenceEditor.Objects
 {
-    class EmployeesVisualizer : Visualizer
+    class ObjectsVisualizer : Visualizer
     {
-        private EmployeesPresenter _presenter;
 
-        public EmployeesVisualizer()
+        private ObjectsPresenter _presenter;
+
+        public ObjectsVisualizer()
         {
-            Name = "Сотрудники";
-            Icon = ImageGallery.ContactIcon;
+            Name = "Объекты";
+            Icon = ImageGallery.ObjectIcon;
 
-            var view = new EmployeesControl();
-            _presenter = new EmployeesPresenter(view); 
+            var view = new ObjectsControl();
+            _presenter = new ObjectsPresenter(view); 
             Presentation = view;
             Workspace.Instance.Updated += Instance_Updated;
         }
 
         void Instance_Updated(object sender, System.EventArgs e)
         {
-            var vis = Workspace.Instance.GetActiveVisualizer<EmployeesVisualizer>();
+            var vis = Workspace.Instance.GetActiveVisualizer<ObjectsVisualizer>();
 
             if (!Equals(vis, this))
                 return;
@@ -33,7 +34,6 @@ namespace ReferenceEditor.Employees
         public override void Dispose()
         {
             Workspace.Instance.Updated -= Instance_Updated;
-
             _presenter.Dispose();
         }
     }

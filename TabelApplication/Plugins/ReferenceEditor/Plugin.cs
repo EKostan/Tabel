@@ -1,14 +1,10 @@
-﻿using System.Collections.Generic;
-using CACore;
-using CACore.FolderOpener;
-using CACore.Menu;
-using CACore.View;
-using Core;
-using Core.Module;
+﻿using CACore.Menu;
 using Core.Plugins;
-using Core.Users.Settings;
+using ReferenceEditor.Contracts;
 using ReferenceEditor.Employees;
 using ReferenceEditor.Time;
+using ReferenceEditor.Jobs;
+using ReferenceEditor.Objects;
 
 namespace ReferenceEditor
 {
@@ -17,8 +13,12 @@ namespace ReferenceEditor
         [Install]
         public static void Install()
         {
-            MainMenu.AddMenuItem(new EmployeesItem(), CommonGroupKeys.Journals);
-            MainMenu.AddMenuItem(new TimeItem(), CommonGroupKeys.Journals);
+            MainMenu.AddMenuItem(new TimeItem(), CommonGroupKeys.References);
+
+            MainMenu.AddMenuItem(new EmployeesItem(), CommonGroupKeys.References);
+            MainMenu.AddMenuItem(new ContractsItem(), CommonGroupKeys.References);
+            MainMenu.AddMenuItem(new JobsItem(), CommonGroupKeys.References);
+            MainMenu.AddMenuItem(new ObjectsItem(), CommonGroupKeys.References);
         }
 
        

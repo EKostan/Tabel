@@ -33,6 +33,119 @@ namespace InterfaceLibrary
             }
         }
 
+        public static Icon HistoryIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/history/historyitem_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+
+        public static Icon PropertiesIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/setup/properties_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon PropertiesIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/setup/properties_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+
+        public static Icon TimeIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/scheduling/showworktimeonly_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+
+
+        public static Icon TimeIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/scheduling/showworktimeonly_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+
+        public static Icon HistoryIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/history/historyitem_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon ContactIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/mail/contact_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+        public static Icon ContactIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/mail/contact_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon ObjectIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/chart/steparea_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon ObjectIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/chart/steparea_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon JobIcon
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/programming/ide_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon JobIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/programming/ide_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+
         public static Image AddItemLargeImage
         {
             get
@@ -53,6 +166,14 @@ namespace InterfaceLibrary
             get
             {
                 var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/tasks/task_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+        public static Icon TaskIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/tasks/task_32x32.png");
                 return Icon.FromHandle(new Bitmap(image).GetHicon());
             }
         }
@@ -103,6 +224,16 @@ namespace InterfaceLibrary
                 return Icon.FromHandle(new Bitmap(image).GetHicon());
             }
         }
+
+        public static Icon RefreshIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/refresh_32x32.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
 
         public static Icon CloseIcon
         {

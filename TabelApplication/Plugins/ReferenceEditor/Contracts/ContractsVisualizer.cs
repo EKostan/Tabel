@@ -3,26 +3,26 @@ using CACore.View;
 using CACore.Visualizers;
 using InterfaceLibrary;
 
-namespace ReferenceEditor.Employees
+namespace ReferenceEditor.Contracts
 {
-    class EmployeesVisualizer : Visualizer
+    class ContractsVisualizer : Visualizer
     {
-        private EmployeesPresenter _presenter;
+        private ContractsPresenter _presenter;
 
-        public EmployeesVisualizer()
+        public ContractsVisualizer()
         {
-            Name = "Сотрудники";
-            Icon = ImageGallery.ContactIcon;
+            Name = "Договора";
+            Icon = ImageGallery.TaskIcon;
 
-            var view = new EmployeesControl();
-            _presenter = new EmployeesPresenter(view); 
+            var view = new ContractsControl();
+            _presenter = new ContractsPresenter(view); 
             Presentation = view;
             Workspace.Instance.Updated += Instance_Updated;
         }
 
         void Instance_Updated(object sender, System.EventArgs e)
         {
-            var vis = Workspace.Instance.GetActiveVisualizer<EmployeesVisualizer>();
+            var vis = Workspace.Instance.GetActiveVisualizer<ContractsVisualizer>();
 
             if (!Equals(vis, this))
                 return;
