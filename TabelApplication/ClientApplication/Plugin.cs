@@ -41,6 +41,7 @@ namespace ClientApplication
                 new Group() { Key = CommonGroupKeys.Journals, DisplayName = "Журналы" },
                 new Group() { Key = CommonGroupKeys.Data, DisplayName = "Данные" },
                 new Group() { Key = CommonGroupKeys.References, DisplayName = "Справочники" },
+                new Group() { Key = CommonGroupKeys.Reports, DisplayName = "Отчеты" },
                 new Group() { Key = CommonGroupKeys.WorkGroup, DisplayName = "Рабочая группа" },
                 new Group() { Key = CommonGroupKeys.Settings, DisplayName = "Настройки" },
                 new Group() { Key = CommonGroupKeys.Actions, DisplayName = "Действия" },

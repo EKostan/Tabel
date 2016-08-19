@@ -99,6 +99,15 @@
     </Compile>
     <Compile Include="Employees\EmployeesItem.cs" />
     <Compile Include="Employees\EmployeesVisualizer.cs" />
+    <Compile Include="Reports\ByEmployees\ReportByEmployeesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reports\ByEmployees\ReportByEmployeesControl.Designer.cs">
+      <DependentUpon>ReportByEmployeesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ByEmployees\ReportByEmployeesItem.cs" />
+    <Compile Include="Reports\ByEmployees\ReportByEmployeesPresenter.cs" />
+    <Compile Include="Reports\ByEmployees\ReportByEmployeesVisualizer.cs" />
     <Compile Include="Time\TimeItem.cs" />
     <Compile Include="Time\TimeVisualizer.cs" />
     <Compile Include="Time\TimePresenter.cs" />
@@ -126,6 +135,9 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ByEmployees\ReportByEmployeesControl.resx">
+      <DependentUpon>ReportByEmployeesControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Time\TimeControl.resx">
       <DependentUpon>TimeControl.cs</DependentUpon>
@@ -157,7 +169,9 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Contract.ContractRecord.datasource" />
     <None Include="Properties\DataSources\Contract.Employee.datasource" />
+    <None Include="Properties\DataSources\Contract.ReportByEmployeesRecord.datasource" />
     <None Include="Properties\DataSources\Contract.TimeRecord.datasource" />
+    <None Include="Properties\DataSources\ReferenceEditor.Reports.ByEmployees.Record.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\..\packages\System.Data.SQLite.Core.1.0.102.0\build\net45\System.Data.SQLite.Core.targets')" />

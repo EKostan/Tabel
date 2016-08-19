@@ -160,6 +160,15 @@ namespace InterfaceLibrary
             get { return Properties.Resources._lock; }
         }
 
+        //public static Icon ReportIcon
+        //{
+        //    get
+        //    {
+        //        var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/reports/report_16x16.png");
+        //        return Icon.FromHandle(new Bitmap(image).GetHicon());
+        //    }
+        //}
+
 
         public static Icon TaskIcon
         {
@@ -202,6 +211,15 @@ namespace InterfaceLibrary
             get
             {
                 var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/reports/report_16x16.png");
+                return Icon.FromHandle(new Bitmap(image).GetHicon());
+            }
+        }
+
+        public static Icon ReportIcon32
+        {
+            get
+            {
+                var image = DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/reports/report_32x32.png");
                 return Icon.FromHandle(new Bitmap(image).GetHicon());
             }
         }

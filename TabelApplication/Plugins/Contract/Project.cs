@@ -24,6 +24,7 @@ namespace Contract
             Jobs = new Jobs();
             Objects = new Objects();
             Contracts = new Contracts();
+            ReportByEmployees = new ReportByEmployees();
         }
 
         public static string ConnectionString 
@@ -49,6 +50,8 @@ namespace Contract
         public Objects Objects { get; set; }
 
         public Contracts Contracts { get; set; }
+
+        public ReportByEmployees ReportByEmployees { get; set; }
 
     }
 }

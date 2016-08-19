@@ -7,6 +7,7 @@
         public const string WorkGroup = "select";
         public const string Journals = "journals";
         public const string References = "References";
+        public const string Reports = "Reports";
         public const string Data = "data";
         
         public const string Settings = "settings";

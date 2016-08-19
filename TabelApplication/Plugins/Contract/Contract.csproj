@@ -59,6 +59,8 @@
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Record.cs" />
+    <Compile Include="ReportByEmployees.cs" />
+    <Compile Include="ReportByEmployeesRecord.cs" />
     <Compile Include="Status.cs" />
     <Compile Include="TimeRecord.cs" />
     <Compile Include="Times.cs" />
