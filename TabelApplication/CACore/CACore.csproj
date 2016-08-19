@@ -55,8 +55,6 @@
     <Compile Include="About\IAboutView.cs" />
     <Compile Include="CustomPath.cs" />
     <Compile Include="FolderOpener\IOpenFolder.cs" />
-    <Compile Include="FolderOpener\IOpenFolderService.cs" />
-    <Compile Include="FolderOpener\OpenFolderSettings.cs" />
     <Compile Include="IPluginSettings.cs" />
     <Compile Include="MainSettings.cs" />
     <Compile Include="Menu\BaseItem.cs" />

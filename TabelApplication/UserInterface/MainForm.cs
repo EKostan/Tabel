@@ -404,8 +404,9 @@ namespace UserInterface
                 tabPage.Controls.Add(visualizerControl);
                 xtraTabControl1.TabPages.Add(tabPage);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Dialogs.ErrorMessageBox("Ошибка открытия вкладки: {0}", e);
                 // ошибка в визулизаторе представление должно наследоваться от Control 
                 // либо у визуализатора отсутствует представление
             }

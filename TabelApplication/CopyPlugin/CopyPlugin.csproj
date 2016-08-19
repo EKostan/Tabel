@@ -51,6 +51,10 @@
       <Project>{cbcb5cbd-f2ab-4542-8fec-b46e6db373a2}</Project>
       <Name>Contract</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Plugins\MainSettingsPlugin\MainSettingsPlugin.csproj">
+      <Project>{68cbcaa8-3394-43a1-bbe6-4208e0921bad}</Project>
+      <Name>MainSettingsPlugin</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Plugins\ReferenceEditor\ReferenceEditor.csproj">
       <Project>{8ff18df0-8474-4cea-87cd-f6b967542ab7}</Project>
       <Name>ReferenceEditor</Name>

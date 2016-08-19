@@ -19,8 +19,8 @@ namespace ClientApplication
         {
             InicializeMenu();
 
-            SettingsController<MainSettings>.LoadSettingsBin();
-            SettingsController<OpenFolderSettings>.LoadSettings();
+            SettingsController<MainSettings>.SettingsDirectory = ModuleApi.ExecutableDirectory;
+            SettingsController<MainSettings>.LoadSettings();
 
             UserSettings.Register<UiLayoutTemplates>();
 
@@ -29,10 +29,6 @@ namespace ClientApplication
         [SystemInstall]
         public static void SystemInstall()
         {
-            var openFolderService = new OpenFolderService();
-
-            MainSystem.Instance.Services.AddService(typeof(IOpenFolderService), openFolderService);
-
             MainMenu.AddBackstageItem(new AboutItem());
         }
 

@@ -87,8 +87,7 @@ namespace ClientApplication
             }
             finally
             {
-                SettingsController<MainSettings>.SaveSettingsBin();
-                SettingsController<OpenFolderSettings>.SaveSettings();
+                SettingsController<MainSettings>.SaveSettings();
             }
 
         }

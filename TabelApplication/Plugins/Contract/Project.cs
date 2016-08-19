@@ -4,6 +4,7 @@ using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CACore;
 using Core;
 
 
@@ -18,9 +19,6 @@ namespace Contract
 
         public Project()
         {
-            ConnectionString = @"Data Source=e:\Tabel\Db\tabel.sqlite; Version=3;";
-            //ConnectionString = @"e:\Tabel\Db\tabel.sqlite";
-
             Employees = new Employees();
             Times = new Times();
             Jobs = new Jobs();
@@ -28,7 +26,14 @@ namespace Contract
             Contracts = new Contracts();
         }
 
-        public static string ConnectionString { get; set; }
+        public static string ConnectionString 
+        {
+            get
+            {
+                var path = SettingsController<MainSettings>.Settings.DbFilePath;
+                return string.Format(@"Data Source={0}; Version=3;", path);
+            }
+        }
 
         public static SQLiteConnection CreateConnection()
         {

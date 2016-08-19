@@ -101,7 +101,6 @@
     <Compile Include="Menu\UpdateItem.cs" />
     <Compile Include="ModuleActivator.cs" />
     <Compile Include="Menu\ExitItem.cs" />
-    <Compile Include="OpenFolderService.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Menu\Settings.cs" />
     <Compile Include="Presenter.cs" />
