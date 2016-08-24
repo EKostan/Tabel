@@ -14,9 +14,12 @@ namespace Contract
 
         public string Position { get; set; }
 
-        public string Telephone { get; set; }
-
         public string Email { get; set; }
+
+        /// <summary>
+        /// Ставка
+        /// </summary>
+        public int Rate { get; set; }
 
         public override string ToString()
         {

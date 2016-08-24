@@ -31,46 +31,48 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportByEmployeesControl));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colJan = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFeb = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMarch = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colApr = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMay = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colJune = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colJule = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAug = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSep = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colOct = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNov = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.reportRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportByEmployeesRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.reportByEmployeesRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportByEmployeesRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
+            this.beiBeginDate = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.beiEndDate = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.bbiExportToExcel = new DevExpress.XtraBars.BarButtonItem();
-            this.beiYear = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.recordBindingSource;
+            this.gridControl1.DataSource = this.reportRecordBindingSource1;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
@@ -80,132 +82,30 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // recordBindingSource
+            // reportRecordBindingSource1
             // 
-            this.recordBindingSource.DataSource = typeof(ReferenceEditor.Reports.ByEmployees.Record);
+            this.reportRecordBindingSource1.DataSource = typeof(ReferenceEditor.Reports.ByEmployees.ReportRecord);
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colEmployeeName,
-            this.colJan,
-            this.colFeb,
-            this.colMarch,
-            this.colApr,
-            this.colMay,
-            this.colJune,
-            this.colJule,
-            this.colAug,
-            this.colSep,
-            this.colOct,
-            this.colNov,
-            this.colDec});
+            this.gridView1.ColumnPanelRowHeight = 80;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.CustomDrawColumnHeader += new DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(this.gridView1_CustomDrawColumnHeader);
             // 
-            // colEmployeeName
+            // reportRecordBindingSource
             // 
-            this.colEmployeeName.Caption = "Сотрудник";
-            this.colEmployeeName.FieldName = "EmployeeName";
-            this.colEmployeeName.Name = "colEmployeeName";
-            this.colEmployeeName.Visible = true;
-            this.colEmployeeName.VisibleIndex = 0;
+            this.reportRecordBindingSource.DataSource = typeof(ReferenceEditor.Reports.ByEmployees.ReportRecord);
             // 
-            // colJan
+            // reportByEmployeesRecordBindingSource2
             // 
-            this.colJan.Caption = "Январь";
-            this.colJan.FieldName = "Jan";
-            this.colJan.Name = "colJan";
-            this.colJan.Visible = true;
-            this.colJan.VisibleIndex = 1;
+            this.reportByEmployeesRecordBindingSource2.DataSource = typeof(Contract.ReportByEmployeesRecord);
             // 
-            // colFeb
+            // reportByEmployeesRecordBindingSource1
             // 
-            this.colFeb.Caption = "Февраль";
-            this.colFeb.FieldName = "Feb";
-            this.colFeb.Name = "colFeb";
-            this.colFeb.Visible = true;
-            this.colFeb.VisibleIndex = 2;
-            // 
-            // colMarch
-            // 
-            this.colMarch.Caption = "Март";
-            this.colMarch.FieldName = "March";
-            this.colMarch.Name = "colMarch";
-            this.colMarch.Visible = true;
-            this.colMarch.VisibleIndex = 3;
-            // 
-            // colApr
-            // 
-            this.colApr.Caption = "Апрель";
-            this.colApr.FieldName = "Apr";
-            this.colApr.Name = "colApr";
-            this.colApr.Visible = true;
-            this.colApr.VisibleIndex = 4;
-            // 
-            // colMay
-            // 
-            this.colMay.Caption = "Май";
-            this.colMay.FieldName = "May";
-            this.colMay.Name = "colMay";
-            this.colMay.Visible = true;
-            this.colMay.VisibleIndex = 5;
-            // 
-            // colJune
-            // 
-            this.colJune.Caption = "Июнь";
-            this.colJune.FieldName = "June";
-            this.colJune.Name = "colJune";
-            this.colJune.Visible = true;
-            this.colJune.VisibleIndex = 6;
-            // 
-            // colJule
-            // 
-            this.colJule.Caption = "Июль";
-            this.colJule.FieldName = "Jule";
-            this.colJule.Name = "colJule";
-            this.colJule.Visible = true;
-            this.colJule.VisibleIndex = 7;
-            // 
-            // colAug
-            // 
-            this.colAug.Caption = "Август";
-            this.colAug.FieldName = "Aug";
-            this.colAug.Name = "colAug";
-            this.colAug.Visible = true;
-            this.colAug.VisibleIndex = 8;
-            // 
-            // colSep
-            // 
-            this.colSep.Caption = "Сентябрь";
-            this.colSep.FieldName = "Sep";
-            this.colSep.Name = "colSep";
-            this.colSep.Visible = true;
-            this.colSep.VisibleIndex = 9;
-            // 
-            // colOct
-            // 
-            this.colOct.Caption = "Октябрь";
-            this.colOct.FieldName = "Oct";
-            this.colOct.Name = "colOct";
-            this.colOct.Visible = true;
-            this.colOct.VisibleIndex = 10;
-            // 
-            // colNov
-            // 
-            this.colNov.Caption = "Ноябрь";
-            this.colNov.FieldName = "Nov";
-            this.colNov.Name = "colNov";
-            this.colNov.Visible = true;
-            this.colNov.VisibleIndex = 11;
-            // 
-            // colDec
-            // 
-            this.colDec.Caption = "Декабрь";
-            this.colDec.FieldName = "Dec";
-            this.colDec.Name = "colDec";
-            this.colDec.Visible = true;
-            this.colDec.VisibleIndex = 12;
+            this.reportByEmployeesRecordBindingSource1.DataSource = typeof(Contract.ReportByEmployeesRecord);
             // 
             // reportByEmployeesRecordBindingSource
             // 
@@ -227,11 +127,14 @@
             this.barManager1.Images = this.imageCollection1;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbiExportToExcel,
-            this.beiYear});
+            this.beiBeginDate,
+            this.beiEndDate});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 5;
+            this.barManager1.MaxItemId = 7;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemTextEdit1});
+            this.repositoryItemTextEdit1,
+            this.repositoryItemDateEdit1,
+            this.repositoryItemDateEdit2});
             // 
             // bar2
             // 
@@ -240,11 +143,48 @@
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.beiYear),
+            new DevExpress.XtraBars.LinkPersistInfo(this.beiBeginDate),
+            new DevExpress.XtraBars.LinkPersistInfo(this.beiEndDate),
             new DevExpress.XtraBars.LinkPersistInfo(this.bbiExportToExcel)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
+            // 
+            // beiBeginDate
+            // 
+            this.beiBeginDate.Caption = "C";
+            this.beiBeginDate.Edit = this.repositoryItemDateEdit1;
+            this.beiBeginDate.EditWidth = 139;
+            this.beiBeginDate.Id = 5;
+            this.beiBeginDate.Name = "beiBeginDate";
+            this.beiBeginDate.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // beiEndDate
+            // 
+            this.beiEndDate.Caption = "По";
+            this.beiEndDate.Edit = this.repositoryItemDateEdit2;
+            this.beiEndDate.EditWidth = 123;
+            this.beiEndDate.Id = 6;
+            this.beiEndDate.Name = "beiEndDate";
+            this.beiEndDate.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            // 
+            // repositoryItemDateEdit2
+            // 
+            this.repositoryItemDateEdit2.AutoHeight = false;
+            this.repositoryItemDateEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
             // bbiExportToExcel
             // 
@@ -253,21 +193,6 @@
             this.bbiExportToExcel.ImageIndex = 3;
             this.bbiExportToExcel.Name = "bbiExportToExcel";
             this.bbiExportToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExportToExcel_ItemClick);
-            // 
-            // beiYear
-            // 
-            this.beiYear.Caption = "Укажите год";
-            this.beiYear.Edit = this.repositoryItemTextEdit1;
-            this.beiYear.EditValue = 2016;
-            this.beiYear.EditWidth = 66;
-            this.beiYear.Id = 3;
-            this.beiYear.Name = "beiYear";
-            this.beiYear.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // barDockControlTop
             // 
@@ -308,6 +233,11 @@
             this.imageCollection1.Images.SetKeyName(2, "save_16x16.png");
             this.imageCollection1.Images.SetKeyName(3, "microsoft_office_2003_excel (1).png");
             // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
             // ReportByEmployeesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,13 +250,21 @@
             this.Name = "ReportByEmployeesControl";
             this.Size = new System.Drawing.Size(638, 505);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,20 +285,14 @@
         private System.Windows.Forms.BindingSource contractRecordBindingSource;
         private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource;
         private System.Windows.Forms.BindingSource recordBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
-        private DevExpress.XtraGrid.Columns.GridColumn colJan;
-        private DevExpress.XtraGrid.Columns.GridColumn colFeb;
-        private DevExpress.XtraGrid.Columns.GridColumn colMarch;
-        private DevExpress.XtraGrid.Columns.GridColumn colApr;
-        private DevExpress.XtraGrid.Columns.GridColumn colMay;
-        private DevExpress.XtraGrid.Columns.GridColumn colJune;
-        private DevExpress.XtraGrid.Columns.GridColumn colJule;
-        private DevExpress.XtraGrid.Columns.GridColumn colAug;
-        private DevExpress.XtraGrid.Columns.GridColumn colSep;
-        private DevExpress.XtraGrid.Columns.GridColumn colOct;
-        private DevExpress.XtraGrid.Columns.GridColumn colNov;
-        private DevExpress.XtraGrid.Columns.GridColumn colDec;
-        private DevExpress.XtraBars.BarEditItem beiYear;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraBars.BarEditItem beiBeginDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraBars.BarEditItem beiEndDate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
+        private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource1;
+        private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource2;
+        private System.Windows.Forms.BindingSource reportRecordBindingSource;
+        private System.Windows.Forms.BindingSource reportRecordBindingSource1;
     }
 }

@@ -45,11 +45,9 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbEmployees = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.colJobName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbJobs = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.colObjectName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbObjects = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.colContractName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colContractCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbContracts = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHours = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -190,9 +188,7 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colEmployeeName,
-            this.colJobName,
-            this.colObjectName,
-            this.colContractName,
+            this.colContractCode,
             this.colDate,
             this.colHours});
             this.gridView1.GridControl = this.gridControl1;
@@ -217,15 +213,6 @@
             this.ricbEmployees.Name = "ricbEmployees";
             this.ricbEmployees.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbEmployees_EditValueChanging);
             // 
-            // colJobName
-            // 
-            this.colJobName.Caption = "Работы";
-            this.colJobName.ColumnEdit = this.ricbJobs;
-            this.colJobName.FieldName = "JobName";
-            this.colJobName.Name = "colJobName";
-            this.colJobName.Visible = true;
-            this.colJobName.VisibleIndex = 1;
-            // 
             // ricbJobs
             // 
             this.ricbJobs.AutoHeight = false;
@@ -233,15 +220,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ricbJobs.Name = "ricbJobs";
             this.ricbJobs.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbJobs_EditValueChanging);
-            // 
-            // colObjectName
-            // 
-            this.colObjectName.Caption = "Объект";
-            this.colObjectName.ColumnEdit = this.ricbObjects;
-            this.colObjectName.FieldName = "ObjectName";
-            this.colObjectName.Name = "colObjectName";
-            this.colObjectName.Visible = true;
-            this.colObjectName.VisibleIndex = 2;
             // 
             // ricbObjects
             // 
@@ -251,14 +229,14 @@
             this.ricbObjects.Name = "ricbObjects";
             this.ricbObjects.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbObjects_EditValueChanging);
             // 
-            // colContractName
+            // colContractCode
             // 
-            this.colContractName.Caption = "Договор";
-            this.colContractName.ColumnEdit = this.ricbContracts;
-            this.colContractName.FieldName = "ContractName";
-            this.colContractName.Name = "colContractName";
-            this.colContractName.Visible = true;
-            this.colContractName.VisibleIndex = 3;
+            this.colContractCode.Caption = "Код проекта";
+            this.colContractCode.ColumnEdit = this.ricbContracts;
+            this.colContractCode.FieldName = "ContractCode";
+            this.colContractCode.Name = "colContractCode";
+            this.colContractCode.Visible = true;
+            this.colContractCode.VisibleIndex = 1;
             // 
             // ricbContracts
             // 
@@ -274,7 +252,7 @@
             this.colDate.FieldName = "Date";
             this.colDate.Name = "colDate";
             this.colDate.Visible = true;
-            this.colDate.VisibleIndex = 4;
+            this.colDate.VisibleIndex = 2;
             // 
             // colHours
             // 
@@ -282,7 +260,7 @@
             this.colHours.FieldName = "Hours";
             this.colHours.Name = "colHours";
             this.colHours.Visible = true;
-            this.colHours.VisibleIndex = 5;
+            this.colHours.VisibleIndex = 3;
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -347,9 +325,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox ricbObjects;
         private System.Windows.Forms.BindingSource timeRecordBindingSource2;
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
-        private DevExpress.XtraGrid.Columns.GridColumn colJobName;
-        private DevExpress.XtraGrid.Columns.GridColumn colObjectName;
-        private DevExpress.XtraGrid.Columns.GridColumn colContractName;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colHours;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox ricbContracts;

@@ -11,7 +11,7 @@ namespace ReferenceEditor.Contracts
 
         public ContractsVisualizer()
         {
-            Name = "Договора";
+            Name = "Проекты и объекты";
             Icon = ImageGallery.TaskIcon;
 
             var view = new ContractsControl();

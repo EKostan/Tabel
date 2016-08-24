@@ -50,10 +50,6 @@
     <Compile Include="ContractRecord.cs" />
     <Compile Include="Contracts.cs" />
     <Compile Include="Employees.cs" />
-    <Compile Include="JobRecord.cs" />
-    <Compile Include="Jobs.cs" />
-    <Compile Include="ObjectRecord.cs" />
-    <Compile Include="Objects.cs" />
     <Compile Include="Project.cs" />
     <Compile Include="EmployeeRecord.cs" />
     <Compile Include="Plugin.cs" />

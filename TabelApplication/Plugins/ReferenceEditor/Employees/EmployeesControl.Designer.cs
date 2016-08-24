@@ -33,10 +33,6 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPosition = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTelephone = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -47,16 +43,22 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colRate = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeRecordBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.employeeBindingSource;
+            this.gridControl1.DataSource = this.employeeRecordBindingSource;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
@@ -74,46 +76,12 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colName,
-            this.colPosition,
-            this.colTelephone,
-            this.colEmail});
+            this.colRate});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.MultiSelect = true;
             this.gridView1.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridView1_RowDeleted);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
-            // 
-            // colName
-            // 
-            this.colName.Caption = "Ф.И.О.";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            // 
-            // colPosition
-            // 
-            this.colPosition.Caption = "Должность";
-            this.colPosition.FieldName = "Position";
-            this.colPosition.Name = "colPosition";
-            this.colPosition.Visible = true;
-            this.colPosition.VisibleIndex = 1;
-            // 
-            // colTelephone
-            // 
-            this.colTelephone.Caption = "Телефон";
-            this.colTelephone.FieldName = "Telephone";
-            this.colTelephone.Name = "colTelephone";
-            this.colTelephone.Visible = true;
-            this.colTelephone.VisibleIndex = 2;
-            // 
-            // colEmail
-            // 
-            this.colEmail.Caption = "e-mail";
-            this.colEmail.FieldName = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Visible = true;
-            this.colEmail.VisibleIndex = 3;
             // 
             // barManager1
             // 
@@ -214,6 +182,30 @@
             this.imageCollection1.InsertGalleryImage("additem_16x16.png", "office2013/actions/additem_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/actions/additem_16x16.png"), 4);
             this.imageCollection1.Images.SetKeyName(4, "additem_16x16.png");
             // 
+            // contractRecordBindingSource
+            // 
+            this.contractRecordBindingSource.DataSource = typeof(Contract.ContractRecord);
+            // 
+            // employeeRecordBindingSource
+            // 
+            this.employeeRecordBindingSource.DataSource = typeof(Contract.EmployeeRecord);
+            // 
+            // colName
+            // 
+            this.colName.Caption = "ФИО";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colRate
+            // 
+            this.colRate.Caption = "Часовая ставка, руб.";
+            this.colRate.FieldName = "Rate";
+            this.colRate.Name = "colRate";
+            this.colRate.Visible = true;
+            this.colRate.VisibleIndex = 3;
+            // 
             // EmployeesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -230,6 +222,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeRecordBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,10 +243,10 @@
         private DevExpress.Utils.ImageCollection imageCollection1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private DevExpress.XtraGrid.Columns.GridColumn colName;
-        private DevExpress.XtraGrid.Columns.GridColumn colPosition;
-        private DevExpress.XtraGrid.Columns.GridColumn colTelephone;
-        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private System.Windows.Forms.BindingSource employeeRecordBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colRate;
+        private System.Windows.Forms.BindingSource contractRecordBindingSource;
     }
 }

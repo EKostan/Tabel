@@ -12,11 +12,9 @@ namespace Contract
             using (var conn = Project.CreateConnection())
             {
                 return conn.Query<TimeRecord>(@"
-                    select t.*, e.Name as EmployeeName, j.Name as JobName, o.Name as ObjectName, c.Name as ContractName
+                    select t.*, e.Name as EmployeeName, c.Code as ContractCode
                     from time as t
                     inner join employees as e on e.Id = t.EmployeeId
-                    left outer join jobs as j on j.Id = t.JobId
-                    left outer join objects as o on o.Id = t.ObjectId
                     left outer join Contracts as c on c.Id = t.ContractId").ToList();
             }
         }
@@ -74,9 +72,9 @@ namespace Contract
             {
                 var command =
                     string.Format(@"
-                                    insert into Time(EmployeeId, JobId, ObjectId, ContractId, Date, Hours) 
-                                    values('{0}', '{1}', '{2}', '{3}', '{4}', {5})",
-                                    item.EmployeeId, item.JobId, item.ObjectId, item.ContractId, item.Date.ToString("yyyy-MM-dd HH:mm:ss"), item.Hours);
+                                    insert into Time(EmployeeId, ContractId, Date, Hours) 
+                                    values({0}, {1}, '{2}', {3})",
+                                    item.EmployeeId, item.ContractId, item.Date.ToString("yyyy-MM-dd HH:mm:ss"), item.Hours);
                 conn.Query<EmployeeRecord>(command);
             }
         }
@@ -91,16 +89,12 @@ namespace Contract
                 var command =
                     string.Format(@"
                                     update Time
-                                    set EmployeeId = '{0}',
-                                        JobId = '{1}',
-                                        ObjectId = '{2}',
-                                        ContractId = '{3}',
-                                        Date = '{4}',
-                                        Hours = {5}
-                                    where id = {6}",
+                                    set EmployeeId = {0},
+                                        ContractId = {1},
+                                        Date = '{2}',
+                                        Hours = {3}
+                                    where id = {4}",
                         record.EmployeeId, 
-                        record.JobId, 
-                        record.ObjectId, 
                         record.ContractId, 
                         record.Date.ToString("yyyy-MM-dd HH:mm:ss"),
                         record.Hours, 

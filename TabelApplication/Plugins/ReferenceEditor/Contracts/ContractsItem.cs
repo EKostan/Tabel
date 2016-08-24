@@ -8,7 +8,7 @@ namespace ReferenceEditor.Contracts
     {
         public ContractsItem()
         {
-            this.DisplayName = "Договора";
+            this.DisplayName = "Проекты и объекты";
             Icon = ImageGallery.TaskIcon;
             LargeIcon = ImageGallery.TaskIcon32;
         }

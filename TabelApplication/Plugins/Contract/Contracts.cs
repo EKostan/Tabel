@@ -65,8 +65,8 @@ namespace Contract
             foreach (var Contract in items)
             {
                 var command =
-                    string.Format("insert into Contracts(Name) values('{0}')",
-                        Contract.Name);
+                    string.Format("insert into Contracts(Name, Object, Code) values('{0}','{1}','{2}')",
+                        Contract.Name, Contract.Object, Contract.Code);
                 conn.Query<ContractRecord>(command);
             }
         }
@@ -81,9 +81,11 @@ namespace Contract
                 var command =
                     string.Format(@"
                                     update Contracts
-                                    set Name = '{0}'
-                                    where id = {1}",
-                        Contract.Name, Contract.Id);
+                                    set Name = '{0}',
+                                        Object = '{1}',
+                                        Code = '{2}'
+                                    where id = {3}",
+                        Contract.Name,Contract.Object, Contract.Code, Contract.Id);
                 conn.Query<ContractRecord>(command);
             }
         }

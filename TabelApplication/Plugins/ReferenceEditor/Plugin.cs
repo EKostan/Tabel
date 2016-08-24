@@ -3,8 +3,6 @@ using Core.Plugins;
 using ReferenceEditor.Contracts;
 using ReferenceEditor.Employees;
 using ReferenceEditor.Time;
-using ReferenceEditor.Jobs;
-using ReferenceEditor.Objects;
 using ReferenceEditor.Reports.ByEmployees;
 
 namespace ReferenceEditor
@@ -18,8 +16,6 @@ namespace ReferenceEditor
 
             MainMenu.AddMenuItem(new EmployeesItem(), CommonGroupKeys.References);
             MainMenu.AddMenuItem(new ContractsItem(), CommonGroupKeys.References);
-            MainMenu.AddMenuItem(new JobsItem(), CommonGroupKeys.References);
-            MainMenu.AddMenuItem(new ObjectsItem(), CommonGroupKeys.References);
 
             MainMenu.AddMenuItem(new ReportByEmployeesItem(), CommonGroupKeys.Reports);
         }

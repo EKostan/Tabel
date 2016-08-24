@@ -45,20 +45,6 @@ namespace ReferenceEditor.Time
             gridControl1.DataSource = _source;
 
         }
-        List<JobRecord> _jobs = new List<JobRecord>();
-        public List<JobRecord> Jobs 
-        {
-            get { return _jobs;}
-            set
-            {
-                _jobs = value;
-                ricbJobs.Items.Clear();
-                foreach (var item in _jobs)
-                {
-                    ricbJobs.Items.Add(item);
-                }
-            } 
-        }
 
         List<EmployeeRecord> _Employees = new List<EmployeeRecord>();
         public List<EmployeeRecord> Employees
@@ -73,21 +59,6 @@ namespace ReferenceEditor.Time
                     ricbEmployees.Items.Add(item);
                 }
 
-            }
-        }
-
-        List<ObjectRecord> _objects = new List<ObjectRecord>();
-        public List<ObjectRecord> Objects
-        {
-            get { return _objects; }
-            set
-            {
-                _objects = value;
-                ricbObjects.Items.Clear();
-                foreach (var item in _objects)
-                {
-                    ricbObjects.Items.Add(item);
-                }
             }
         }
 
@@ -175,7 +146,7 @@ namespace ReferenceEditor.Time
                 return;
 
             time.ContractId = emp.Id;
-            time.ContractName = emp.Name;
+            time.ContractCode = emp.Code;
 
             if (time.Status != Status.Insert)
                 time.Status = Status.Update;
@@ -184,45 +155,13 @@ namespace ReferenceEditor.Time
 
         private void ricbJobs_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            e.Cancel = true;
-
-            var time = GetSelectedRecord();
-
-            if (time == null)
-                return;
-
-            var emp = e.NewValue as JobRecord;
-
-            if (emp == null)
-                return;
-
-            time.JobId = emp.Id;
-            time.JobName = emp.Name;
             
-            if (time.Status != Status.Insert)
-                time.Status = Status.Update;
 
         }
 
         private void ricbObjects_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            e.Cancel = true;
-
-            var time = GetSelectedRecord();
-
-            if (time == null)
-                return;
-
-            var emp = e.NewValue as ObjectRecord;
-
-            if (emp == null)
-                return;
-
-            time.ObjectId = emp.Id;
-            time.ObjectName = emp.Name;
-
-            if (time.Status != Status.Insert)
-                time.Status = Status.Update;
+           
         }
 
         private void gridView1_RowUpdated(object sender, DevExpress.XtraGrid.Views.Base.RowObjectEventArgs e)

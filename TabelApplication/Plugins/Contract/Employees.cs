@@ -64,8 +64,8 @@ namespace Contract
             foreach (var employee in items)
             {
                 var command =
-                    string.Format("insert into Employees(Name, Position, Telephone, Email) values('{0}', '{1}', '{2}', '{3}')",
-                        employee.Name, employee.Position, employee.Telephone, employee.Email);
+                    string.Format("insert into Employees(Name, Position, Email, Rate) values('{0}', '{1}', '{2}', {3})",
+                        employee.Name, employee.Position, employee.Email, employee.Rate);
                 conn.Query<EmployeeRecord>(command);
             }
         }
@@ -82,10 +82,10 @@ namespace Contract
                                     update Employees
                                     set Name = '{0}',
                                         Position = '{1}',
-                                        Telephone = '{2}',
+                                        Rate = {2},
                                         Email = '{3}'
                                     where id = {4}",
-                        employee.Name, employee.Position, employee.Telephone, employee.Email, employee.Id);
+                        employee.Name, employee.Position, employee.Rate, employee.Email, employee.Id);
                 conn.Query<EmployeeRecord>(command);
             }
         }

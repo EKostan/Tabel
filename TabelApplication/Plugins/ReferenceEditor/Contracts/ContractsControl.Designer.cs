@@ -31,29 +31,35 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractsControl));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.contractRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.bar2 = new DevExpress.XtraBars.Bar();
+            this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.bar2 = new DevExpress.XtraBars.Bar();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.bbiAdd = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiDelete = new DevExpress.XtraBars.BarButtonItem();
-            this.bbiSave = new DevExpress.XtraBars.BarButtonItem();
-            this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.contractRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colObject = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.contractRecordBindingSource;
+            this.gridControl1.DataSource = this.contractRecordBindingSource2;
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
@@ -63,14 +69,24 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // contractRecordBindingSource1
+            // 
+            this.contractRecordBindingSource1.DataSource = typeof(Contract.ContractRecord);
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colName});
+            this.colName,
+            this.colCode,
+            this.colObject});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridView1_RowDeleted);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            // 
+            // contractRecordBindingSource
+            // 
+            this.contractRecordBindingSource.DataSource = typeof(Contract.ContractRecord);
             // 
             // barManager1
             // 
@@ -88,6 +104,44 @@
             this.bbiSave});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 3;
+            // 
+            // bar2
+            // 
+            this.bar2.BarName = "Main menu";
+            this.bar2.DockCol = 0;
+            this.bar2.DockRow = 0;
+            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
+            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiAdd),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiDelete),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave)});
+            this.bar2.OptionsBar.MultiLine = true;
+            this.bar2.OptionsBar.UseWholeRow = true;
+            this.bar2.Text = "Main menu";
+            // 
+            // bbiAdd
+            // 
+            this.bbiAdd.Caption = "Add";
+            this.bbiAdd.Id = 0;
+            this.bbiAdd.ImageIndex = 0;
+            this.bbiAdd.Name = "bbiAdd";
+            this.bbiAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAdd_ItemClick);
+            // 
+            // bbiDelete
+            // 
+            this.bbiDelete.Caption = "Delete";
+            this.bbiDelete.Id = 1;
+            this.bbiDelete.ImageIndex = 1;
+            this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
+            // 
+            // bbiSave
+            // 
+            this.bbiSave.Caption = "Save";
+            this.bbiSave.Id = 2;
+            this.bbiSave.ImageIndex = 2;
+            this.bbiSave.Name = "bbiSave";
+            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -117,19 +171,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(638, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
             // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiAdd),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiDelete),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bbiSave)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
             // imageCollection1
             // 
             this.imageCollection1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollection1.ImageStream")));
@@ -140,41 +181,33 @@
             this.imageCollection1.InsertGalleryImage("save_16x16.png", "office2013/save/save_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/save/save_16x16.png"), 2);
             this.imageCollection1.Images.SetKeyName(2, "save_16x16.png");
             // 
-            // bbiAdd
+            // contractRecordBindingSource2
             // 
-            this.bbiAdd.Caption = "Add";
-            this.bbiAdd.Id = 0;
-            this.bbiAdd.ImageIndex = 0;
-            this.bbiAdd.Name = "bbiAdd";
-            this.bbiAdd.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiAdd_ItemClick);
-            // 
-            // bbiDelete
-            // 
-            this.bbiDelete.Caption = "Delete";
-            this.bbiDelete.Id = 1;
-            this.bbiDelete.ImageIndex = 1;
-            this.bbiDelete.Name = "bbiDelete";
-            this.bbiDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiDelete_ItemClick);
-            // 
-            // bbiSave
-            // 
-            this.bbiSave.Caption = "Save";
-            this.bbiSave.Id = 2;
-            this.bbiSave.ImageIndex = 2;
-            this.bbiSave.Name = "bbiSave";
-            this.bbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiSave_ItemClick);
-            // 
-            // contractRecordBindingSource
-            // 
-            this.contractRecordBindingSource.DataSource = typeof(Contract.ContractRecord);
+            this.contractRecordBindingSource2.DataSource = typeof(Contract.ContractRecord);
             // 
             // colName
             // 
-            this.colName.Caption = "Договор";
+            this.colName.Caption = "Название";
             this.colName.FieldName = "Name";
             this.colName.Name = "colName";
             this.colName.Visible = true;
             this.colName.VisibleIndex = 0;
+            // 
+            // colObject
+            // 
+            this.colObject.Caption = "Объект";
+            this.colObject.FieldName = "Object";
+            this.colObject.Name = "colObject";
+            this.colObject.Visible = true;
+            this.colObject.VisibleIndex = 1;
+            // 
+            // colCode
+            // 
+            this.colCode.Caption = "Код";
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 2;
             // 
             // ContractsControl
             // 
@@ -188,10 +221,12 @@
             this.Name = "ContractsControl";
             this.Size = new System.Drawing.Size(638, 505);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,6 +247,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.ImageCollection imageCollection1;
         private System.Windows.Forms.BindingSource contractRecordBindingSource;
+        private System.Windows.Forms.BindingSource contractRecordBindingSource1;
+        private System.Windows.Forms.BindingSource contractRecordBindingSource2;
         private DevExpress.XtraGrid.Columns.GridColumn colName;
+        private DevExpress.XtraGrid.Columns.GridColumn colCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colObject;
     }
 }

@@ -38,12 +38,6 @@ namespace ReferenceEditor.Time
             var employees = Project.Current.Employees.Get();
             _view.Employees = employees;
 
-            var jobs = Project.Current.Jobs.Get();
-            _view.Jobs = jobs;
-
-            var objects = Project.Current.Objects.Get();
-            _view.Objects = objects;
-
             var contracts = Project.Current.Contracts.Get();
             _view.Contracts = contracts;
 
