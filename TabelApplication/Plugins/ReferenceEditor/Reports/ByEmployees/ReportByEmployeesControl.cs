@@ -8,6 +8,7 @@ using CACore.Visualizers;
 using Contract;
 using DevExpress.Data;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using DevExpress.XtraGrid.Views.Grid;
 using InterfaceLibrary;
 using DevExpress.XtraGrid.Columns;
@@ -19,15 +20,22 @@ namespace ReferenceEditor.Reports.ByEmployees
         public ReportByEmployeesControl()
         {
             InitializeComponent();
-
+            Init();
             //beiBeginDate.EditValue = new DateTime(DateTime.Now.Year, 1, 1);
             //beiEndDate.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-
+            gridView1.OptionsView.GroupFooterShowMode = GroupFooterShowMode.VisibleIfExpanded;
             beiBeginDate.EditValue = new DateTime(2016, 7, 1);
             beiEndDate.EditValue = new DateTime(2016, 7, 16);
         }
 
+        private GridGroupSummaryItemCollection gsiSummary;
 
+        void Init()
+        {
+            gsiSummary = new GridGroupSummaryItemCollection(gridView1);
+            gsiSummary.Add(SummaryItemType.Sum, "Cost");
+            gridView1.GroupSummary.Assign(gsiSummary);
+        }
         public DateTime BeginDate
         {
             get
@@ -50,15 +58,15 @@ namespace ReferenceEditor.Reports.ByEmployees
 
         public void SetReportByEmployees(List<ReportRecord> items)
         {
-            //gridControl1.BeginUpdate();
+            gridControl1.BeginUpdate();
 
             _source = new BindingList<ReportRecord>(items);
-            gridView1.Columns.Clear();
             
             var table = CreateDataTable();
 
+            CreateViewColumn();
             gridControl1.DataSource = table;
-            gridControl1.RefreshDataSource();
+            //gridControl1.RefreshDataSource();
             //gridView1.PopulateColumns();
             //gridView1.BestFitColumns();
 
@@ -67,10 +75,12 @@ namespace ReferenceEditor.Reports.ByEmployees
             //gridControl1.MainView = view;
             //gridControl1.ViewCollection.Clear();
             //gridControl1.ViewCollection.Add(view);
-            //gridControl1.EndUpdate();
+            gridControl1.EndUpdate();
         }
 
         private const string EmployeeName = "EmployeeName";
+        private const string RowType = "RowType";
+        
         private const string ObjectName = "ObjectName";
         private const string ContractName = "ContractName";
         private const string SumHours = "SumHours";
@@ -82,22 +92,18 @@ namespace ReferenceEditor.Reports.ByEmployees
 
             var columns = new List<DataColumn>();
 
+            var cRowType = new DataColumn(RowType);
             var cEmployeeName = new DataColumn(EmployeeName) { Caption = "Инженер",  };
             var cObjectName = new DataColumn(ObjectName) { Caption = "Объект" };
             var cContractName = new DataColumn(ContractName) { Caption = "Проект" };
-            var cSumHours = new DataColumn(SumHours) { Caption = "Итого часов1:" };
-            var cSumCost = new DataColumn(SumCost) { Caption = "Итого рублей:" };
+            var cSumHours = new DataColumn(SumHours, typeof(int)) { Caption = "Итого часов1:" };
+            var cSumCost = new DataColumn(SumCost, typeof(int)) { Caption = "Итого рублей:" };
 
-            var vcolumns = new List<GridColumn>()
-            {
-                new GridColumn() {Caption = "Инженер", Name = EmployeeName, FieldName = EmployeeName},
-                new GridColumn() {Caption = "Объект", Name = ObjectName, FieldName = ObjectName},
-                new GridColumn() {Caption = "Проект", Name = ContractName, FieldName = ContractName},
-            };
+            
 
             columns.AddRange(new[]
             {
-                cEmployeeName, cObjectName,cContractName
+                cRowType, cEmployeeName, cObjectName,cContractName
             });
 
 
@@ -110,9 +116,7 @@ namespace ReferenceEditor.Reports.ByEmployees
                     var col = new DataColumn(dateHourse.Date) /*{ Caption = dateHourse.Date }*/;
                     columns.Add(col);
 
-                    var gcol = new GridColumn() {Caption = dateHourse.Date};
-                    //gcol.AppearanceHeader.TextOptions.
-                    vcolumns.Add(gcol);
+                    
                 }
             }
 
@@ -120,10 +124,8 @@ namespace ReferenceEditor.Reports.ByEmployees
             {
                 cSumHours, cSumCost
             });
-            vcolumns.AddRange(new []{
-                new GridColumn() {Caption = "Итого часов:", Name = SumHours, FieldName = SumHours},
-                new GridColumn() {Caption = "Итого рублей:", Name = SumCost, FieldName = SumCost},
-            });
+
+           
 
 
             table.Columns.AddRange(columns.ToArray());
@@ -131,11 +133,13 @@ namespace ReferenceEditor.Reports.ByEmployees
             foreach (var reportRecord in _source)
             {
                 var row = table.NewRow();
+                row[RowType] = reportRecord.RecordType;
                 row[EmployeeName] = reportRecord.EmployeeName;
                 row[ObjectName] = reportRecord.ObjectName;
                 row[ContractName] = reportRecord.ContractName;
                 row[SumHours] = reportRecord.SumHours;
                 row[SumCost] = reportRecord.SumCost;
+
 
                 foreach (var item in reportRecord.DateHours)
                 {
@@ -145,7 +149,59 @@ namespace ReferenceEditor.Reports.ByEmployees
                 table.Rows.Add(row);
             }
 
+           
+
             return table;
+        }
+
+        private void CreateViewColumn()
+        {
+            int i = 0;
+            var vcolumns = new List<GridColumn>()
+            {
+                new GridColumn() {Caption = "Инженер", Name = EmployeeName, FieldName = EmployeeName, Visible = true, VisibleIndex = i++},
+                new GridColumn() {Caption = "Объект", Name = ObjectName, FieldName = ObjectName, Visible = true, VisibleIndex = i++},
+                new GridColumn() {Caption = "Проект", Name = ContractName, FieldName = ContractName, Visible = true, VisibleIndex = i++},
+            };
+
+
+            var first = _source.FirstOrDefault();
+
+            if (first != null)
+            {
+                foreach (var dateHourse in first.DateHours)
+                {
+                    var gcol = new GridColumn() { FieldName = dateHourse.Date, Caption = dateHourse.Date, Visible = true, VisibleIndex = i++ };
+                    gcol.Width = 30;
+                    vcolumns.Add(gcol);
+                }
+            }
+
+            var colSumHours = new GridColumn()
+            {
+                Caption = "Итого часов:",
+                Name = SumHours,
+                FieldName = SumHours,
+                Visible = true,
+                VisibleIndex = i++
+                //SummaryItem =
+                //{
+                //    FieldName = SumHours,
+                //    SummaryType = SummaryItemType.Sum,
+                //    DisplayFormat = @"SUM={0:c}"
+                //}
+            };
+
+            vcolumns.AddRange(new[]
+            {
+                colSumHours,
+                new GridColumn() {Caption = "Итого рублей:", Name = SumCost, FieldName = SumCost, Visible = true, VisibleIndex = i++},
+            });
+
+            gridView1.BeginUpdate();
+            gridView1.Columns.Clear();
+            gridView1.Columns.AddRange(vcolumns.ToArray());
+            gridView1.EndUpdate();
         }
 
         private GridView CreateView()
@@ -275,11 +331,11 @@ namespace ReferenceEditor.Reports.ByEmployees
         //private const string SumCost = "SumCost";
 
             if (e.Column == null
-                || e.Column.Name == "col" + EmployeeName
-                || e.Column.Name == "col" + ObjectName
-                || e.Column.Name == "col" + ContractName
-                || e.Column.Name == "col" + SumHours
-                || e.Column.Name == "col" + SumCost
+                || e.Column.Name == EmployeeName
+                || e.Column.Name == ObjectName
+                || e.Column.Name == ContractName
+                || e.Column.Name == SumHours
+                || e.Column.Name == SumCost
                 )
                 return;
 
@@ -293,6 +349,30 @@ namespace ReferenceEditor.Reports.ByEmployees
             e.Graphics.DrawString(e.Column.ToString(), e.Appearance.Font, e.Appearance.GetForeBrush(e.Cache), r, format);
             e.Graphics.Restore(state);
             e.Handled = true;
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            var s = e.CellValue as string;
+            if (s != null && s ==  "0")
+            {
+                e.DisplayText = "";
+            }
+
+            var row = gridView1.GetDataRow(e.RowHandle) as DataRow;
+
+            if(row == null)
+                return;
+
+            var rowType = row[RowType] is string ? (string) row[RowType] : "";
+
+
+
+            if (rowType == "Sum")
+            {
+                e.Appearance.Font = new Font(e.Appearance.Font, FontStyle.Bold);
+            }
+
         }
     }
 }

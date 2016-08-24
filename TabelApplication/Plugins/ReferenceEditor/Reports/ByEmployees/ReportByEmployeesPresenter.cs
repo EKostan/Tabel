@@ -59,10 +59,14 @@ namespace ReferenceEditor.Reports.ByEmployees
 
             // создаем записи
 
+            var sumDict = new Dictionary<string, DateHours>();
+            var sumByDates = new Dictionary<string, Dictionary<string, DateHours>>();
+
             foreach (var item in byEmpCotr)
             {
                 if(item.Value.Count <=0 )
                     continue;
+
 
                 var rec = new ReportRecord
                 {
@@ -87,6 +91,23 @@ namespace ReferenceEditor.Reports.ByEmployees
 
                         sumCost += cost;
                         sumHours += hours;
+
+                        if(!sumDict.ContainsKey(findRec.EmployeeName))
+                            sumDict[findRec.EmployeeName] = new DateHours();
+                        sumDict[findRec.EmployeeName].Cost += cost;
+                        sumDict[findRec.EmployeeName].Hours += hours;
+
+                        if(!sumByDates.ContainsKey(findRec.EmployeeName))
+                            sumByDates[findRec.EmployeeName] = new Dictionary<string, DateHours>();
+
+                        if(!sumByDates[findRec.EmployeeName].ContainsKey(date.Key))
+                            sumByDates[findRec.EmployeeName][date.Key] = new DateHours();
+                        
+                        sumByDates[findRec.EmployeeName][date.Key].Cost += cost;
+                        sumByDates[findRec.EmployeeName][date.Key].Hours += hours;
+                        sumByDates[findRec.EmployeeName][date.Key].Date = date.Key;
+
+
                     }
 
                     rec.DateHours.Add(new DateHours(){Date = date.Key, Cost = cost, Hours = hours});
@@ -97,6 +118,21 @@ namespace ReferenceEditor.Reports.ByEmployees
                 res.Add(rec);
             }
 
+            foreach (var item in sumDict)
+            {
+                var rec = new ReportRecord()
+                {
+                    EmployeeName = item.Key,
+                    SumHours = item.Value.Hours,
+                    SumCost = item.Value.Cost,
+                    DateHours = sumByDates[item.Key].Values.ToList(),
+                    RecordType = RecordType.Sum,
+                    ObjectName = "ИТОГО:"
+                };
+                res.Add(rec);
+            }
+
+            res = res.OrderBy(x => x.EmployeeName).ToList();
 
             return res;
         }
@@ -140,6 +176,12 @@ namespace ReferenceEditor.Reports.ByEmployees
         }
     }
 
+    enum RecordType
+    {
+        None,
+        Sum
+    }
+
     class ReportRecord
     {
         public string EmployeeName { get; set; }
@@ -148,7 +190,7 @@ namespace ReferenceEditor.Reports.ByEmployees
 
         
         public List<DateHours> DateHours = new List<DateHours>();
-
+        public RecordType RecordType = RecordType.None;
 
         public int SumHours { get; set; }
         public int SumCost { get; set; }

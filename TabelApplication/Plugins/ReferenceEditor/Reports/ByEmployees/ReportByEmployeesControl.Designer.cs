@@ -33,6 +33,7 @@
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.reportRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colContractName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.reportRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportByEmployeesRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.reportByEmployeesRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -89,11 +90,24 @@
             // gridView1
             // 
             this.gridView1.ColumnPanelRowHeight = 80;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colContractName});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumHours", null, "")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.CustomDrawColumnHeader += new DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(this.gridView1_CustomDrawColumnHeader);
+            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
+            // 
+            // colContractName
+            // 
+            this.colContractName.FieldName = "ContractName";
+            this.colContractName.Name = "colContractName";
+            this.colContractName.Visible = true;
+            this.colContractName.VisibleIndex = 0;
+            this.colContractName.Width = 65;
             // 
             // reportRecordBindingSource
             // 
@@ -294,5 +308,6 @@
         private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource2;
         private System.Windows.Forms.BindingSource reportRecordBindingSource;
         private System.Windows.Forms.BindingSource reportRecordBindingSource1;
+        private DevExpress.XtraGrid.Columns.GridColumn colContractName;
     }
 }
