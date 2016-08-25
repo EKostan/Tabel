@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
+using DevExpress.XtraPivotGrid;
 
 namespace InterfaceLibrary
 {
     public class GridExporter
     {
 
-        public static void ExportToExcel(/*GridView exportView*/GridControl gridControl)
+        public static void ExportToExcel(GridControl gridControl)
         {
             string fileName = ShowSaveFileDialog("Экспорт в Excel", "Microsoft Excel|*.xlsx");
             if (fileName == string.Empty) 
@@ -15,23 +16,19 @@ namespace InterfaceLibrary
 
             gridControl.ExportToXlsx(fileName);
 
-            //exportView.ExportToXlsx(fileName);
-
-            //if (exportView == null) return;
-
-             
-
-            //var gvlink = (GridViewExportLink)exportView.CreateExportLink(new ExportXlsProvider(fileName));
-            //gvlink.ExportAll = true;
-            //gvlink.ExpandAll = true;
-            //gvlink.ExportDetails = true;
-            //gvlink.ExportTo(true);
-
-
             OpenFile(fileName);
         }
 
+        public static void ExportToExcel(PivotGridControl gridControl)
+        {
+            string fileName = ShowSaveFileDialog("Экспорт в Excel", "Microsoft Excel|*.xlsx");
+            if (fileName == string.Empty)
+                return;
 
+            gridControl.ExportToXlsx(fileName);
+
+            OpenFile(fileName);
+        }
 
         private static void OpenFile(string fileName)
         {

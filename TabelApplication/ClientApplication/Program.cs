@@ -28,7 +28,7 @@ namespace ClientApplication
         private static bool InstanceExists()
         {
             bool createdNew;
-            _mutex = new Mutex(false, "SomeApplication", out createdNew);
+            _mutex = new Mutex(false, "SomeApplication1", out createdNew);
             return (!createdNew);
         }
 

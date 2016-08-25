@@ -4,7 +4,11 @@ namespace Contract
 {
     public class ReportByEmployeesRecord : Record
     {
-        public string Date { get; set; }
+        public ReportByEmployeesRecord()
+        {
+        }
+
+        public DateTime Date { get; set; }
 
         public int EmployeeId { get; set; }
 

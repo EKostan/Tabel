@@ -24,7 +24,6 @@ namespace Contract
             Contracts = new Contracts();
             ReportByEmployees = new ReportByEmployees();
         }
-
         public static string ConnectionString 
         {
             get

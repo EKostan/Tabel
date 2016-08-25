@@ -30,16 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportByEmployeesControl));
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.reportRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colContractName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.reportRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportByEmployeesRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.reportByEmployeesRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.recordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportByEmployeesRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            DevExpress.XtraPivotGrid.PivotGridCustomTotal pivotGridCustomTotal5 = new DevExpress.XtraPivotGrid.PivotGridCustomTotal();
+            DevExpress.XtraPivotGrid.PivotGridCustomTotal pivotGridCustomTotal6 = new DevExpress.XtraPivotGrid.PivotGridCustomTotal();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.beiBeginDate = new DevExpress.XtraBars.BarEditItem();
@@ -47,87 +39,36 @@
             this.beiEndDate = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.bbiExportToExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.repositoryItemRadioGroup2 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.repositoryItemRadioGroup1 = new DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup();
+            this.pivotGridControl1 = new DevExpress.XtraPivotGrid.PivotGridControl();
+            this.fieldDate = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldEmployee = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldContract = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField1 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField2 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.fieldObjectName = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField3 = new DevExpress.XtraPivotGrid.PivotGridField();
+            this.pivotGridField4 = new DevExpress.XtraPivotGrid.PivotGridField();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.reportRecordBindingSource1;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 24);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(638, 481);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // reportRecordBindingSource1
-            // 
-            this.reportRecordBindingSource1.DataSource = typeof(ReferenceEditor.Reports.ByEmployees.ReportRecord);
-            // 
-            // gridView1
-            // 
-            this.gridView1.ColumnPanelRowHeight = 80;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colContractName});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "SumHours", null, "")});
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.CustomDrawColumnHeader += new DevExpress.XtraGrid.Views.Grid.ColumnHeaderCustomDrawEventHandler(this.gridView1_CustomDrawColumnHeader);
-            this.gridView1.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gridView1_CustomDrawCell);
-            // 
-            // colContractName
-            // 
-            this.colContractName.FieldName = "ContractName";
-            this.colContractName.Name = "colContractName";
-            this.colContractName.Visible = true;
-            this.colContractName.VisibleIndex = 0;
-            this.colContractName.Width = 65;
-            // 
-            // reportRecordBindingSource
-            // 
-            this.reportRecordBindingSource.DataSource = typeof(ReferenceEditor.Reports.ByEmployees.ReportRecord);
-            // 
-            // reportByEmployeesRecordBindingSource2
-            // 
-            this.reportByEmployeesRecordBindingSource2.DataSource = typeof(Contract.ReportByEmployeesRecord);
-            // 
-            // reportByEmployeesRecordBindingSource1
-            // 
-            this.reportByEmployeesRecordBindingSource1.DataSource = typeof(Contract.ReportByEmployeesRecord);
-            // 
-            // reportByEmployeesRecordBindingSource
-            // 
-            this.reportByEmployeesRecordBindingSource.DataSource = typeof(Contract.ReportByEmployeesRecord);
-            // 
-            // contractRecordBindingSource
-            // 
-            this.contractRecordBindingSource.DataSource = typeof(Contract.ContractRecord);
             // 
             // barManager1
             // 
@@ -144,11 +85,14 @@
             this.beiBeginDate,
             this.beiEndDate});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 7;
+            this.barManager1.MaxItemId = 10;
             this.barManager1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1,
             this.repositoryItemDateEdit1,
-            this.repositoryItemDateEdit2});
+            this.repositoryItemDateEdit2,
+            this.repositoryItemComboBox1,
+            this.repositoryItemRadioGroup1,
+            this.repositoryItemRadioGroup2});
             // 
             // bar2
             // 
@@ -208,19 +152,29 @@
             this.bbiExportToExcel.Name = "bbiExportToExcel";
             this.bbiExportToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bbiExportToExcel_ItemClick);
             // 
+            // repositoryItemRadioGroup2
+            // 
+            this.repositoryItemRadioGroup2.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "День"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Месяц"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Квартал"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Год")});
+            this.repositoryItemRadioGroup2.Name = "repositoryItemRadioGroup2";
+            this.repositoryItemRadioGroup2.EditValueChanged += new System.EventHandler(this.repositoryItemRadioGroup2_EditValueChanged);
+            // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(638, 24);
+            this.barDockControlTop.Size = new System.Drawing.Size(820, 24);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 505);
-            this.barDockControlBottom.Size = new System.Drawing.Size(638, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(820, 0);
             // 
             // barDockControlLeft
             // 
@@ -233,7 +187,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(638, 24);
+            this.barDockControlRight.Location = new System.Drawing.Point(820, 24);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 481);
             // 
             // imageCollection1
@@ -252,33 +206,144 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // repositoryItemRadioGroup1
+            // 
+            this.repositoryItemRadioGroup1.Name = "repositoryItemRadioGroup1";
+            // 
+            // pivotGridControl1
+            // 
+            this.pivotGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pivotGridControl1.Fields.AddRange(new DevExpress.XtraPivotGrid.PivotGridField[] {
+            this.fieldDate,
+            this.fieldEmployee,
+            this.fieldContract,
+            this.pivotGridField1,
+            this.pivotGridField2,
+            this.fieldObjectName,
+            this.pivotGridField3,
+            this.pivotGridField4});
+            this.pivotGridControl1.Location = new System.Drawing.Point(0, 24);
+            this.pivotGridControl1.Name = "pivotGridControl1";
+            this.pivotGridControl1.OptionsView.ShowColumnHeaders = false;
+            this.pivotGridControl1.OptionsView.ShowDataHeaders = false;
+            this.pivotGridControl1.OptionsView.ShowFilterHeaders = false;
+            this.pivotGridControl1.Size = new System.Drawing.Size(820, 481);
+            this.pivotGridControl1.TabIndex = 4;
+            this.pivotGridControl1.CustomDrawFieldValue += new DevExpress.XtraPivotGrid.PivotCustomDrawFieldValueEventHandler(this.pivotGridControl1_CustomDrawFieldValue);
+            // 
+            // fieldDate
+            // 
+            this.fieldDate.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.fieldDate.AreaIndex = 0;
+            this.fieldDate.Caption = "День";
+            this.fieldDate.FieldName = "Date";
+            this.fieldDate.GroupInterval = DevExpress.XtraPivotGrid.PivotGroupInterval.Date;
+            this.fieldDate.Name = "fieldDate";
+            this.fieldDate.Options.ReadOnly = true;
+            this.fieldDate.UnboundFieldName = "fieldDate";
+            // 
+            // fieldEmployee
+            // 
+            this.fieldEmployee.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldEmployee.AreaIndex = 0;
+            this.fieldEmployee.Caption = "Инженер";
+            this.fieldEmployee.FieldName = "EmployeeName";
+            this.fieldEmployee.Name = "fieldEmployee";
+            // 
+            // fieldContract
+            // 
+            this.fieldContract.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldContract.AreaIndex = 1;
+            this.fieldContract.Caption = "Проект";
+            this.fieldContract.FieldName = "ContractCode";
+            this.fieldContract.Name = "fieldContract";
+            // 
+            // pivotGridField1
+            // 
+            this.pivotGridField1.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField1.AreaIndex = 0;
+            this.pivotGridField1.Caption = "Часы";
+            this.pivotGridField1.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            pivotGridCustomTotal5.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.pivotGridField1.CustomTotals.AddRange(new DevExpress.XtraPivotGrid.PivotGridCustomTotal[] {
+            pivotGridCustomTotal5});
+            this.pivotGridField1.FieldName = "Hours";
+            this.pivotGridField1.Name = "pivotGridField1";
+            this.pivotGridField1.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.pivotGridField1.Width = 60;
+            // 
+            // pivotGridField2
+            // 
+            this.pivotGridField2.Area = DevExpress.XtraPivotGrid.PivotArea.DataArea;
+            this.pivotGridField2.AreaIndex = 1;
+            this.pivotGridField2.Caption = "Стоимость";
+            this.pivotGridField2.CellFormat.FormatString = "c0";
+            this.pivotGridField2.CellFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            pivotGridCustomTotal6.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.pivotGridField2.CustomTotals.AddRange(new DevExpress.XtraPivotGrid.PivotGridCustomTotal[] {
+            pivotGridCustomTotal6});
+            this.pivotGridField2.FieldName = "Cost";
+            this.pivotGridField2.Name = "pivotGridField2";
+            this.pivotGridField2.Options.ReadOnly = true;
+            this.pivotGridField2.Options.ShowValues = false;
+            this.pivotGridField2.ValueFormat.FormatString = "c0";
+            this.pivotGridField2.ValueFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            // 
+            // fieldObjectName
+            // 
+            this.fieldObjectName.Area = DevExpress.XtraPivotGrid.PivotArea.RowArea;
+            this.fieldObjectName.AreaIndex = 2;
+            this.fieldObjectName.Caption = "Объект";
+            this.fieldObjectName.FieldName = "ObjectName";
+            this.fieldObjectName.Name = "fieldObjectName";
+            // 
+            // pivotGridField3
+            // 
+            this.pivotGridField3.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.pivotGridField3.AreaIndex = 1;
+            this.pivotGridField3.Name = "pivotGridField3";
+            this.pivotGridField3.Options.AllowExpand = DevExpress.Utils.DefaultBoolean.False;
+            this.pivotGridField3.Options.ShowGrandTotal = false;
+            this.pivotGridField3.Options.ShowValues = false;
+            // 
+            // pivotGridField4
+            // 
+            this.pivotGridField4.Area = DevExpress.XtraPivotGrid.PivotArea.ColumnArea;
+            this.pivotGridField4.AreaIndex = 2;
+            this.pivotGridField4.Name = "pivotGridField4";
+            this.pivotGridField4.Options.AllowExpand = DevExpress.Utils.DefaultBoolean.False;
+            this.pivotGridField4.Options.ShowGrandTotal = false;
+            this.pivotGridField4.Options.ShowValues = false;
+            // 
             // ReportByEmployeesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.pivotGridControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "ReportByEmployeesControl";
-            this.Size = new System.Drawing.Size(638, 505);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportRecordBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.recordBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportByEmployeesRecordBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
+            this.Size = new System.Drawing.Size(820, 505);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRadioGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pivotGridControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,8 +351,6 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar bar2;
         private DevExpress.XtraBars.BarButtonItem bbiExportToExcel;
@@ -296,18 +359,22 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.Utils.ImageCollection imageCollection1;
-        private System.Windows.Forms.BindingSource contractRecordBindingSource;
-        private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource;
-        private System.Windows.Forms.BindingSource recordBindingSource;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraBars.BarEditItem beiBeginDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraBars.BarEditItem beiEndDate;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
-        private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource1;
-        private System.Windows.Forms.BindingSource reportByEmployeesRecordBindingSource2;
-        private System.Windows.Forms.BindingSource reportRecordBindingSource;
-        private System.Windows.Forms.BindingSource reportRecordBindingSource1;
-        private DevExpress.XtraGrid.Columns.GridColumn colContractName;
+        private DevExpress.XtraPivotGrid.PivotGridControl pivotGridControl1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldDate;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldEmployee;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldContract;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField1;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraPivotGrid.PivotGridField fieldObjectName;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField3;
+        private DevExpress.XtraPivotGrid.PivotGridField pivotGridField4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup2;
+        private DevExpress.XtraEditors.Repository.RepositoryItemRadioGroup repositoryItemRadioGroup1;
     }
 }

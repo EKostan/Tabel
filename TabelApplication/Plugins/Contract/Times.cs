@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using System.Data.SQLite;
@@ -17,10 +18,13 @@ namespace Contract
                     inner join employees as e on e.Id = t.EmployeeId
                     left outer join Contracts as c on c.Id = t.ContractId").ToList();
             }
+
+
+
         }
 
 
-
+      
 
         public void Set(List<TimeRecord> items)
         {
