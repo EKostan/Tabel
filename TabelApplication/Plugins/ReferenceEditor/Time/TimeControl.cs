@@ -82,12 +82,36 @@ namespace ReferenceEditor.Time
         {
             var record = _source.AddNew();
             record.Status = Status.Insert;
+            record.Date = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
             _items.Add(record);
         }
 
         private void bbiDelete_ItemClick(object sender, ItemClickEventArgs e)
         {
+            var emps = GetSelectedItems();
 
+            foreach (var emp in emps)
+            {
+                emp.Status = Status.Delete;
+                _source.Remove(emp);
+            }
+        }
+
+        private List<TimeRecord> GetSelectedItems()
+        {
+            var res = new List<TimeRecord>();
+            var indexes = gridView1.GetSelectedRows();
+
+            foreach (var index in indexes)
+            {
+                var row = gridView1.GetRow(index) as TimeRecord;
+
+                if (row == null)
+                    continue;
+
+                res.Add(row);
+            }
+            return res;
         }
 
         private void bbiSave_ItemClick(object sender, ItemClickEventArgs e)
@@ -129,6 +153,12 @@ namespace ReferenceEditor.Time
             if (time.Status != Status.Insert)
                 time.Status = Status.Update;
 
+            if (gridView1.IsEditing)
+            {
+                gridView1.CloseEditor();
+                gridView1.RefreshData();
+            }
+
         }
 
         private void ricbContracts_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -150,7 +180,12 @@ namespace ReferenceEditor.Time
 
             if (time.Status != Status.Insert)
                 time.Status = Status.Update;
-
+            
+            if (gridView1.IsEditing)
+            {
+                gridView1.CloseEditor();
+                gridView1.RefreshData();
+            }
         }
 
         private void ricbJobs_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)

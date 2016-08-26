@@ -45,8 +45,24 @@ namespace ReferenceEditor.Contracts
 
         private void bbiSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (gridView1.IsEditing)
+            {
+                gridView1.CloseEditor();
+
+                var record = GetSelectedRecord();
+
+                if (record.Status != Status.Insert)
+                    record.Status = Status.Update;
+            }
+
             OnSaveButtonClick();
         }
+
+        ContractRecord GetSelectedRecord()
+        {
+            return gridView1.GetFocusedRow() as ContractRecord;
+        }
+
 
         private void bbiAdd_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -102,6 +118,49 @@ namespace ReferenceEditor.Contracts
                 emp.Status = Status.Delete;
                 _source.Remove(emp);
             }
+        }
+
+        private void repositoryItemTextEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+
+        }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            if (e.Column == colCode)
+            {
+                if (!CheckCodeUniq(e.Value.ToString()))
+                {
+                    throw new Exception("Ошибка: Проект с таким кодом уже существует, введите другой код.");
+                }
+            }
+        }
+
+        private bool CheckCodeUniq(string code)
+        {
+            int f = 0;
+            foreach (var record in _source)
+            {
+                if (record.Code == code)
+                {
+                    f++;
+
+                    if(f>=2)
+                        return false;
+                }
+            }
+
+            return true;
         }
     }
 }

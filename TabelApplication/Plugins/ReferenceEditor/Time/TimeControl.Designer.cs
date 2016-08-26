@@ -45,12 +45,12 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbEmployees = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.ricbJobs = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.ricbObjects = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colContractCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ricbContracts = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHours = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ricbJobs = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.ricbObjects = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.timeRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.timeRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -60,9 +60,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ricbContracts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbJobs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbObjects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ricbContracts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource)).BeginInit();
@@ -211,23 +211,8 @@
             this.ricbEmployees.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ricbEmployees.Name = "ricbEmployees";
+            this.ricbEmployees.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ricbEmployees.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbEmployees_EditValueChanging);
-            // 
-            // ricbJobs
-            // 
-            this.ricbJobs.AutoHeight = false;
-            this.ricbJobs.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ricbJobs.Name = "ricbJobs";
-            this.ricbJobs.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbJobs_EditValueChanging);
-            // 
-            // ricbObjects
-            // 
-            this.ricbObjects.AutoHeight = false;
-            this.ricbObjects.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ricbObjects.Name = "ricbObjects";
-            this.ricbObjects.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbObjects_EditValueChanging);
             // 
             // colContractCode
             // 
@@ -244,6 +229,7 @@
             this.ricbContracts.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ricbContracts.Name = "ricbContracts";
+            this.ricbContracts.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.ricbContracts.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbContracts_EditValueChanging);
             // 
             // colDate
@@ -261,6 +247,22 @@
             this.colHours.Name = "colHours";
             this.colHours.Visible = true;
             this.colHours.VisibleIndex = 3;
+            // 
+            // ricbJobs
+            // 
+            this.ricbJobs.AutoHeight = false;
+            this.ricbJobs.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ricbJobs.Name = "ricbJobs";
+            this.ricbJobs.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbJobs_EditValueChanging);
+            // 
+            // ricbObjects
+            // 
+            this.ricbObjects.AutoHeight = false;
+            this.ricbObjects.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ricbObjects.Name = "ricbObjects";
+            this.ricbObjects.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.ricbObjects_EditValueChanging);
             // 
             // repositoryItemLookUpEdit1
             // 
@@ -294,9 +296,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ricbContracts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbJobs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ricbObjects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ricbContracts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeRecordBindingSource)).EndInit();

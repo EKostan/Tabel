@@ -21,12 +21,14 @@ namespace ReferenceEditor.Reports.ByEmployees
         public ReportByEmployeesControl()
         {
             InitializeComponent();
+
+            beiBeginDate.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             
-            //beiBeginDate.EditValue = new DateTime(DateTime.Now.Year, 1, 1);
-            //beiEndDate.EditValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            var nowBegin = DateTime.Now.AddMonths(1);
+            beiEndDate.EditValue = new DateTime(nowBegin.Year, nowBegin.Month, 1);
             
-            beiBeginDate.EditValue = new DateTime(2016, 7, 1);
-            beiEndDate.EditValue = new DateTime(2016, 7, 16);
+            //beiBeginDate.EditValue = new DateTime(2016, 7, 1);
+            //beiEndDate.EditValue = new DateTime(2016, 7, 16);
 
             repositoryItemComboBox1.Items.Clear();
             repositoryItemComboBox1.Items.AddRange(new []

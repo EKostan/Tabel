@@ -11,7 +11,7 @@ namespace Contract
         {
             using (var conn = Project.CreateConnection())
             {
-                return conn.Query<EmployeeRecord>("select * from Employees").ToList();
+                return conn.Query<EmployeeRecord>("select * from Employees order by Name").ToList();
             }
         }
 

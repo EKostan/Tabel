@@ -25,6 +25,14 @@ namespace ReferenceEditor.Reports.ByEmployees
         public void ReloadData()
         {
             var data = Project.Current.ReportByEmployees.Get(_view.BeginDate, _view.EndDate);
+
+            if (data.Count <= 0)
+            {
+                _view.SetReportByEmployees(data);
+                return;
+            }
+                
+            
             data = FillMissingDates(data, _view.BeginDate, _view.EndDate);
             _view.SetReportByEmployees(data);
         }

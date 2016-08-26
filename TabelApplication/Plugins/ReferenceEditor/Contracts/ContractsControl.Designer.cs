@@ -31,8 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractsControl));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.contractRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.contractRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.colObject = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contractRecordBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contractRecordBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
@@ -44,17 +49,14 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.contractRecordBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colObject = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -64,14 +66,16 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 24);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
+            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemTextEdit1});
             this.gridControl1.Size = new System.Drawing.Size(638, 481);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // contractRecordBindingSource1
+            // contractRecordBindingSource2
             // 
-            this.contractRecordBindingSource1.DataSource = typeof(Contract.ContractRecord);
+            this.contractRecordBindingSource2.DataSource = typeof(Contract.ContractRecord);
             // 
             // gridView1
             // 
@@ -81,8 +85,46 @@
             this.colObject});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.RowDeleted += new DevExpress.Data.RowDeletedEventHandler(this.gridView1_RowDeleted);
             this.gridView1.RowUpdated += new DevExpress.XtraGrid.Views.Base.RowObjectEventHandler(this.gridView1_RowUpdated);
+            // 
+            // colName
+            // 
+            this.colName.Caption = "Название";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            this.colName.VisibleIndex = 0;
+            // 
+            // colCode
+            // 
+            this.colCode.Caption = "Код";
+            this.colCode.ColumnEdit = this.repositoryItemTextEdit1;
+            this.colCode.FieldName = "Code";
+            this.colCode.Name = "colCode";
+            this.colCode.Visible = true;
+            this.colCode.VisibleIndex = 2;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            this.repositoryItemTextEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemTextEdit1_EditValueChanged);
+            // 
+            // colObject
+            // 
+            this.colObject.Caption = "Объект";
+            this.colObject.FieldName = "Object";
+            this.colObject.Name = "colObject";
+            this.colObject.Visible = true;
+            this.colObject.VisibleIndex = 1;
+            // 
+            // contractRecordBindingSource1
+            // 
+            this.contractRecordBindingSource1.DataSource = typeof(Contract.ContractRecord);
             // 
             // contractRecordBindingSource
             // 
@@ -181,34 +223,6 @@
             this.imageCollection1.InsertGalleryImage("save_16x16.png", "office2013/save/save_16x16.png", DevExpress.Images.ImageResourceCache.Default.GetImage("office2013/save/save_16x16.png"), 2);
             this.imageCollection1.Images.SetKeyName(2, "save_16x16.png");
             // 
-            // contractRecordBindingSource2
-            // 
-            this.contractRecordBindingSource2.DataSource = typeof(Contract.ContractRecord);
-            // 
-            // colName
-            // 
-            this.colName.Caption = "Название";
-            this.colName.FieldName = "Name";
-            this.colName.Name = "colName";
-            this.colName.Visible = true;
-            this.colName.VisibleIndex = 0;
-            // 
-            // colObject
-            // 
-            this.colObject.Caption = "Объект";
-            this.colObject.FieldName = "Object";
-            this.colObject.Name = "colObject";
-            this.colObject.Visible = true;
-            this.colObject.VisibleIndex = 1;
-            // 
-            // colCode
-            // 
-            this.colCode.Caption = "Код";
-            this.colCode.FieldName = "Code";
-            this.colCode.Name = "colCode";
-            this.colCode.Visible = true;
-            this.colCode.VisibleIndex = 2;
-            // 
             // ContractsControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,12 +235,13 @@
             this.Name = "ContractsControl";
             this.Size = new System.Drawing.Size(638, 505);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractRecordBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +267,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colObject;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
     }
 }
