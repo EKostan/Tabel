@@ -41,7 +41,21 @@ namespace ReferenceEditor.Employees
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (gridView1.IsEditing)
+            {
+                gridView1.CloseEditor();
+
+                var record = GetSelectedRecord();
+
+                if (record.Status != Status.Insert)
+                    record.Status = Status.Update;
+            }
+
             OnSaveButtonClick();
+        }
+        EmployeeRecord GetSelectedRecord()
+        {
+            return gridView1.GetFocusedRow() as EmployeeRecord;
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
